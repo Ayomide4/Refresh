@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,9 +13,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-4 px-6 w-full flex justify-between items-center bg-background shadow-sm fixed top-0 z-10">
-      <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-primary">REFRESH</h1>
+    <nav className="py-4 px-6 w-full flex justify-between items-center bg-background">
+      <div className="flex items-center ">
+        <img src={logo} width={100} height={67} />
       </div>
 
       {/* Desktop Menu */}
@@ -45,7 +46,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-text focus:outline-none"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             {isMenuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
