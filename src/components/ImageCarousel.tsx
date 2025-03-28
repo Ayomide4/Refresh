@@ -15,7 +15,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   const safeImages = images || [];
 
   // Duplicate the images array to create a seamless loop.
-  const duplicatedImages = useMemo(() => [...safeImages, ...safeImages], [safeImages]);
+  const duplicatedImages = useMemo(
+    () => [...safeImages, ...safeImages],
+    [safeImages],
+  );
 
   const finalImages = useMemo(() => {
     if (direction === "right") {

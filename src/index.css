@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #BECAD9;
+  --color-background: #becad9;
   --color-primary: #113867;
 }
 
-
-
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-414.85%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-414.85%);
+  }
 }
 
 @keyframes marquee-right {
-  0% { transform: translateX(-414.85%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(-414.85%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee-left {

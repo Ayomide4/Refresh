@@ -1,26 +1,32 @@
-import { Eye, HeartHandshake } from "lucide-react"
+import { Eye, HeartHandshake } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
-import img from "../assets/IMG_0011.jpg"
-import img2 from "../assets/IMG_0015.jpg"
-import img3 from "../assets/IMG_0034.jpg"
-import img4 from "../assets/IMG_0038.jpg"
-import img5 from "../assets/IMG_0046.jpg"
-import img6 from "../assets/IMG_0289.jpg"
-import img7 from "../assets/IMG_0290.jpg"
-import img8 from "../assets/IMG_0306.jpg"
-
+import img from "../assets/IMG_0011.jpg";
+import img2 from "../assets/IMG_0015.jpg";
+import img3 from "../assets/IMG_0034.jpg";
+import img4 from "../assets/IMG_0038.jpg";
+import img5 from "../assets/IMG_0046.jpg";
+import img6 from "../assets/IMG_0289.jpg";
+import img7 from "../assets/IMG_0290.jpg";
+import img8 from "../assets/IMG_0306.jpg";
 
 const About = () => {
-
-  const firstRow = [img, img2, img3, img4]
-  const secondRow = [img5, img6, img7, img8]
+  const firstRow = [img, img2, img3, img4];
+  const secondRow = [img5, img6, img7, img8];
 
   const statements = [
-    { icon: <Eye size={40} />, title: "Our Vision", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
     {
-      icon: <HeartHandshake size={40} />, title: "Our Mission", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      icon: <Eye size={40} />,
+      title: "Our Vision",
+      content:
+        "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
-  ]
+    {
+      icon: <HeartHandshake size={40} />,
+      title: "Our Mission",
+      content:
+        "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+  ];
 
   const renderStatements = statements.map((statement, idx) => (
     <article
@@ -44,10 +50,10 @@ const About = () => {
       className="
         relative
         bg-white
-        rounded-t-3xl
+        rounded-3xl
         -mt-16        
-    z-20
-        p-6
+        z-20
+        px-6
         md:px-12
         lg:px-20
         shadow-lg
@@ -58,7 +64,11 @@ const About = () => {
           About Us
         </h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam.
+        </p>
 
         <div className="border-b-2 border-black/15 mt-12"></div>
 
@@ -76,10 +86,8 @@ const About = () => {
           {renderStatements}
         </div>
 
-
         <ImageCarousel images={firstRow} direction="right" />
         <ImageCarousel images={secondRow} direction="left" />
-
       </div>
     </section>
   );
