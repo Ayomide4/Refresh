@@ -1,10 +1,24 @@
 import { Eye, HeartHandshake } from "lucide-react"
+import ImageCarousel from "./ImageCarousel";
+import img from "../assets/IMG_0011.jpg"
+import img2 from "../assets/IMG_0015.jpg"
+import img3 from "../assets/IMG_0034.jpg"
+import img4 from "../assets/IMG_0038.jpg"
+import img5 from "../assets/IMG_0046.jpg"
+import img6 from "../assets/IMG_0289.jpg"
+import img7 from "../assets/IMG_0290.jpg"
+import img8 from "../assets/IMG_0306.jpg"
+
+
 const About = () => {
 
+  const firstRow = [img, img2, img3, img4]
+  const secondRow = [img5, img6, img7, img8]
+
   const statements = [
-    { icon: <Eye />, title: "Our Vision", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
+    { icon: <Eye size={40} />, title: "Our Vision", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
     {
-      icon: <HeartHandshake />, title: "Our Mission", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      icon: <HeartHandshake size={40} />, title: "Our Mission", content: "Quis nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
   ]
 
@@ -15,15 +29,12 @@ const About = () => {
         flex-shrink-0
         w-64
         p-4
-        bg-gray-100
-        rounded-lg
-        shadow-sm
         space-y-3
       "
     >
-      <div className="text-3xl text-primary">{statement.icon}</div>
-      <h2 className="text-xl font-semibold">{statement.title}</h2>
-      <p className="text-sm">{statement.content}</p>
+      <div className="">{statement.icon}</div>
+      <h2 className="text-2xl font-medium">{statement.title}</h2>
+      <p className="font-light">{statement.content}</p>
     </article>
   ));
 
@@ -58,11 +69,16 @@ const About = () => {
             flex-nowrap
             gap-6
             py-4
-            mt-6
+            my-6
+          -mr-10
           "
         >
           {renderStatements}
         </div>
+
+
+        <ImageCarousel images={firstRow} />
+        {/* <ImageCarousel images={firstRow} direction="right" /> */}
 
       </div>
     </section>
