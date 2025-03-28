@@ -77,8 +77,8 @@ const About = () => {
         </div>
 
 
-        <ImageCarousel images={firstRow} />
-        {/* <ImageCarousel images={firstRow} direction="right" /> */}
+        <ImageCarousel images={firstRow} direction="right" />
+        <ImageCarousel images={secondRow} direction="left" />
 
       </div>
     </section>

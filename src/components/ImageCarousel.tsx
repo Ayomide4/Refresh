@@ -9,7 +9,7 @@ interface ImageCarouselProps {
 const ImageCarousel: React.FC<ImageCarouselProps> = ({
   images,
   direction = "left",
-  duration = 5,
+  duration = 40,
 }) => {
   // Ensure images is defined, defaulting to an empty array if not.
   const safeImages = images || [];
@@ -17,9 +17,14 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   // Duplicate the images array to create a seamless loop.
   const duplicatedImages = useMemo(() => [...safeImages, ...safeImages], [safeImages]);
 
-  // For rightward scrolling, reverse the duplicated images array.
   const finalImages = useMemo(() => {
-    return direction === "right" ? [...duplicatedImages].reverse() : duplicatedImages;
+    if (direction === "right") {
+      const reversed = [...duplicatedImages].reverse();
+      // Rotate: remove the last element and add it to the front.
+      return reversed;
+    } else {
+      return duplicatedImages;
+    }
   }, [duplicatedImages, direction]);
 
   // Build the row of images from the final array.
@@ -35,7 +40,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
           height: "300px", // Fixed height for consistency
           objectFit: "cover", // Ensures images cover the area without distortion
         }}
-        className="mx-2 flex-shrink-0" // Adds horizontal margin between images
+        className="mx-2 flex-shrink-0 rounded-2xl" // Adds horizontal margin between images
         // Error handling: if the image fails to load, swap the src to a fallback image.
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = "fallback-image.png";
@@ -50,9 +55,9 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden mb-5 -mx-10">
       <div
-        className={`w-[1000px]  flex ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
+        className={`  flex ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
         style={animationStyle}
       >
         {carouselRow}

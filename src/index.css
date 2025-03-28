@@ -9,12 +9,12 @@
 
 @keyframes marquee-left {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-205%); }
+  100% { transform: translateX(-414.85%); }
 }
 
 @keyframes marquee-right {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(175%); }
+  0% { transform: translateX(-414.85%); }
+  100% { transform: translateX(0%); }
 }
 
 .animate-marquee-left {
