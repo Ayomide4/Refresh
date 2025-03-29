@@ -1,6 +1,7 @@
 export const DonationForm = () => {
 
   //TODO: add functionality
+  // add custom amount input
 
   return (
     <form className="bg-white rounded-2xl w-full flex flex-col items-center p-5">

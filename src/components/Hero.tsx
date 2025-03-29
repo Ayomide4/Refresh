@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-[90vh] flex flex-col items-center text-left overflow-hidden">
+    <div className="relative h-[90vh] flex flex-col items-center text-left overflow-hidden" id="hero">
       {/* Background Image */}
       <img
         src={mountain}
@@ -18,9 +18,9 @@ const Hero = () => {
       />
 
       {/* Hero Content */}
-      <div className="relative z-10 px-6 max-w-2xl text-black ">
-        <h1 className="text-5xl md:text-5xl font-medium mb-0">Stay Inspired</h1>
-        <h1 className="text-5xl md:text-5xl font-medium mb-8">
+      <div className="relative z-10 px-6 md:px-24 w-full text-black ">
+        <h1 className="text-5xl md:text-8xl font-normal mb-0">Stay Inspired</h1>
+        <h1 className="text-5xl md:text-8xl font-normal mb-8">
           Stay Connected
         </h1>
 

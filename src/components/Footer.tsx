@@ -1,11 +1,12 @@
 import { ArrowUpRight } from 'lucide-react';
 import logo from "../assets/logo.png"
+import scrollToSection from '../utils/utils';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#222222] max-w-full m-4 text-background rounded-3xl p-4 mt-10">
+    <footer className="bg-[#222222] max-w-full m-4 text-background rounded-3xl p-4 mt-10" id='footer'>
       <h1 className="my-8 text-5xl">Get in touch</h1>
 
       <div className="flex flex-col space-y-4 mb-12">
@@ -34,7 +35,7 @@ const Footer = () => {
 
       <div className="border-b-2 border-background my-10"></div>
 
-      <img src={logo} width={120} height={80} />
+      <img src={logo} width={120} height={80} onClick={() => scrollToSection("app")} className='object-cover cursor-pointer' />
 
       <p className='mt-4 text-lg'>© {currentYear} Refresh. All Rights Reserved</p>
 
