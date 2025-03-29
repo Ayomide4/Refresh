@@ -10,16 +10,16 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-414.85%);
+    transform: translateX(calc(-1 * var(--half-width)));
   }
 }
 
 @keyframes marquee-right {
   0% {
-    transform: translateX(-414.85%);
+    transform: translateX(calc(-1 * var(--half-width)));
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
 
