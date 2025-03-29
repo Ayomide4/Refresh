@@ -5,5 +5,4 @@ export const scrollToSection = (id: string) => {
   }
 };
 
-
-export default scrollToSection
+export default scrollToSection;

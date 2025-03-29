@@ -22,15 +22,12 @@ const Navbar = () => {
         <img src={logo} width={140} height={90} />
       </div>
 
-
       <button
         onClick={() => scrollToSection("footer")}
         className="font-medium text-xl underline underline-offset-8 hidden md:block cursor-pointer"
       >
         Get in touch
       </button>
-
-
 
       {/* Mobile Menu */}
       {isMenuOpen && (

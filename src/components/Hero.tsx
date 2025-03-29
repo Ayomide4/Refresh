@@ -9,7 +9,10 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-[90vh] flex flex-col items-center text-left overflow-hidden md:pt-5" id="hero">
+    <div
+      className="relative h-[90vh] flex flex-col items-center text-left overflow-hidden md:pt-5"
+      id="hero"
+    >
       {/* Background Image */}
       <img
         src={mountain}
@@ -19,8 +22,12 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 px-6 md:px-24 w-full text-black ">
-        <h1 className="text-5xl md:text-8xl font-normal mb-0">Stay Inspired.</h1>
-        <h1 className="text-5xl md:text-8xl font-normal mb-8">Stay Connected. </h1>
+        <h1 className="text-5xl md:text-8xl font-normal mb-0">
+          Stay Inspired.
+        </h1>
+        <h1 className="text-5xl md:text-8xl font-normal mb-8">
+          Stay Connected.{" "}
+        </h1>
 
         <p className="text-xl md:text-2xl md:w-xl mb-8 font-light">
           Welcome to Refresh—your hub for all news, updates, and events related
