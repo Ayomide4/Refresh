@@ -11,6 +11,8 @@ interface Event {
   description: string;
 }
 
+//TODO: add programtic way of displayin next events and past events refer to calendar
+
 export const Events = () => {
   // Sample events data
   const upcomingEvents: Event[] = [
@@ -43,37 +45,39 @@ export const Events = () => {
     },
   ];
 
-  const renderEvents = () => {
-    return (
-      <div className="space-x-2">
-        <EventCard />
-        <div className="border-r-2 border-black border-dashed"></div>
-      </div>
-    );
-  };
-
   return (
     <section
       id="events"
-      className="py-16 px-6 md:px-12 lg:px-20 bg-gray-50 rounded-3xl z-30 -mt-10 relative"
+      className="py-16 px-6  bg-[#E9E7EC] rounded-3xl z-30 -mt-10 relative"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-4xl font-light mb-8 text-left ">
-          Upcoming Events
+      <div className=" mx-6 md:mx-20 ">
+        <h2 className="text-4xl md:text-9xl font-light md:font-extralight mb-8 md:mb-20 text-left ">
+          Events
         </h2>
 
-        <div className="w-full h-72 bg-black rounded-2xl"></div>
+        <div className="flex flex-col md:flex-row md:space-x-10">
+          {/* <div className="w-full h-72 bg-black rounded-2xl md:w-[1000px] md:h-[400px]"></div> */}
+          <img className="object-cover w-full h-72 rounded-2xl md:w-1/2 md:min-h-[400px]" src={welcome} />
 
-        <div className="space-y-3 mt-8">
-          <h3 className="text-3xl font-normal">Join us for Refresh March</h3>
-          <p className="font-light text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
+          <div className="space-y-3 mt-8 md:mt-0 md:w-1/2">
+            <h3 className="text-3xl md:text-5xl  md:mb-4 font-normal">Join us for Refresh April</h3>
+            <p className="font-light text-xl md:text-2xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam.
+            </p>
+            <div className="hidden  max-w-80 bg-black rounded-full text-white md:flex justify-evenly p-4 text-sm items-center mt-8 ">
+              <MapPin className="cursor-pointer" href="/" />
+              <a href="/" className="underline">
+                info@therefresh.com
+              </a>
+              <p className="underline cursor-pointer">999-999-9999</p>
+            </div>
+          </div>
+
         </div>
 
-        <div className="bg-black rounded-full text-white flex justify-evenly p-4 text-sm items-center mt-8">
+        <div className="bg-black rounded-full text-white flex justify-evenly p-4 text-sm items-center mt-8 md:hidden">
           <MapPin className="cursor-pointer" href="/" />
           <a href="/" className="underline">
             info@therefresh.com

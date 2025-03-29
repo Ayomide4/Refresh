@@ -8,14 +8,14 @@ const Donation = () => {
       id="donation"
       className="py-20 px-6 md:px-12 lg:px-20 bg-[#222222] rounded-t-3xl relative -mt-10 z-40"
     >
-      <div className="max-w-4xl mx-auto text-left">
+      <div className=" mx-6 md:mx-20  text-left flex flex-col items-center">
         {/* Section Heading */}
-        <h2 className="text-4xl md:text-4xl font-medium mb-6 text-white">
+        <h2 className="text-4xl text-center  md:text-7xl font-medium mb-6 text-white">
           Support Our Vision
         </h2>
 
         {/* Description */}
-        <p className="text-xl mb-8 max-w-2xl mx-auto text-white">
+        <p className="text-xl text-center  mb-8 max-w-2xl  text-white">
           Your generous donation helps us create more opportunities for
           spiritual growth and community building. Every contribution makes a
           difference in our ability to serve and expand our reach.
