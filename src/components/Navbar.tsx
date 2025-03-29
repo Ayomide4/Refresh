@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <button
         onClick={() => scrollToSection("footer")}
-        className="font-medium text-lg underline underline-offset-8 hidden md:block cursor-pointer"
+        className="font-medium text-xl underline underline-offset-8 hidden md:block cursor-pointer"
       >
         Get in touch
       </button>
