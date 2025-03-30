@@ -4,12 +4,12 @@ import Events from "./components/Events";
 import Donation from "./components/Donation";
 import Footer from "./components/Footer";
 
-// TODO: 
+// TODO:
 // - animation for text popping in
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-background" id="app">
+    <div className="flex flex-col min-h-screen w-full bg-background" id="app">
       <Header />
       <main className="flex-grow">
         <About />

@@ -9,8 +9,6 @@
     }
   ],
   "compilerOptions": {
-    "types": [
-      "webpack-env"
-    ]
+    "types": ["webpack-env"]
   }
 }

@@ -8,7 +8,7 @@ const Donation = () => {
       id="donation"
       className="py-20 px-6 md:px-12 lg:px-20 bg-[#222222] rounded-t-3xl relative -mt-10 z-40"
     >
-      <div className=" mx-6 md:mx-20  text-left flex flex-col items-center">
+      <div className="md:mx-20  text-left flex flex-col items-center">
         {/* Section Heading */}
         <h2 className="text-4xl text-center  md:text-7xl font-medium mb-6 text-white">
           Support Our Vision

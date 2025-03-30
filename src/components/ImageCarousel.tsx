@@ -15,9 +15,14 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
   const safeImages = images || [];
 
   // Duplicate images to create a seamless loop.
-  const duplicatedImages = useMemo(() => [...safeImages, ...safeImages], [safeImages]);
+  const duplicatedImages = useMemo(
+    () => [...safeImages, ...safeImages],
+    [safeImages],
+  );
   const finalImages = useMemo(() => {
-    return direction === "right" ? [...duplicatedImages].reverse() : duplicatedImages;
+    return direction === "right"
+      ? [...duplicatedImages].reverse()
+      : duplicatedImages;
   }, [duplicatedImages, direction]);
 
   // Reference to the container to measure its width.
@@ -57,11 +62,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
       <div
         ref={carouselRef}
         className={`flex ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
-        style={{
-          animationDuration: `${duration}s`,
-          // Set a CSS variable with the measured half-width.
-          "--half-width": `${halfWidth}px`,
-        } as React.CSSProperties}
+        style={
+          {
+            animationDuration: `${duration}s`,
+            // Set a CSS variable with the measured half-width.
+            "--half-width": `${halfWidth}px`,
+          } as React.CSSProperties
+        }
       >
         {carouselRow}
       </div>

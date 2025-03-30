@@ -2,7 +2,7 @@ export const DonationForm = () => {
   // TODO: Add functionality, including form submission and Stripe integration
 
   const handleSubmit = (event: React.FormEvent) => {
-    console.log('pog')
+    console.log("pog");
     event.preventDefault();
     // Process donation...
   };
@@ -13,7 +13,11 @@ export const DonationForm = () => {
         Make a Secure Donation
       </h2>
 
-      <form id="donationForm" className="space-y-4 mb-8 w-full" onSubmit={handleSubmit}>
+      <form
+        id="donationForm"
+        className="space-y-4 mb-8 w-full"
+        onSubmit={handleSubmit}
+      >
         <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 space-x-4">
           <div className="w-full space-y-2">
             <label htmlFor="firstName" className="block font-semibold">
@@ -42,8 +46,6 @@ export const DonationForm = () => {
               required
             />
           </div>
-
-
         </div>
         <div className="space-y-2">
           <label htmlFor="email" className="block font-semibold">

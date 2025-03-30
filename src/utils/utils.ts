@@ -4,5 +4,3 @@ export const scrollToSection = (id: string) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-
-export default scrollToSection;

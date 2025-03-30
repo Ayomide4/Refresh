@@ -1,23 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Eye, HeartHandshake } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
 
 const About = () => {
   // State to hold the dynamically loaded image URLs.
   const [images, setImages] = useState<string[]>([]);
+  const statementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (statementRef.current) {
+      statementRef.current.scrollLeft = 0;
+    }
+
     // Dynamically import all matching images from the assets folder.
     const imageModules = import.meta.glob("../assets/*.{jpg,png}");
 
     // Filter keys to only include paths starting with "../assets/IMG_"
     const filteredPaths = Object.keys(imageModules).filter((path) =>
-      path.startsWith("../assets/IMG_")
+      path.startsWith("../assets/IMG_"),
     );
 
     // Import each module and extract its default export (the image URL).
     const importPromises = filteredPaths.map((path) =>
-      imageModules[path]().then((mod) => mod.default)
+      imageModules[path]().then((mod) => mod.default),
     );
 
     // Once all promises resolve, update the state.
@@ -83,8 +88,8 @@ const About = () => {
           <div className="md:w-1/2 text-xl font-light space-y-5">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
             </p>
             <p>
               Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -106,8 +111,12 @@ const About = () => {
             py-4
             my-6
             md:mb-20
-            -mr-10
+            pl-6
+          md:pl-20
+            -mx-10
+          md:-mx-20
           "
+          ref={statementRef}
         >
           {renderStatements}
         </div>

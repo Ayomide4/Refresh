@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import logo from "../assets/logo.png";
-import scrollToSection from "../utils/utils";
+import { scrollToSection } from "../utils/utils";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,8 +15,12 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row w-full md:space-x-96">
         <div className="flex flex-col space-y-4 mb-12">
           <p className="text-xl text-[#787878]">Contact us</p>
-          <a className="text-2xl underline" href="mailto:">info.therefresh@gmail.com</a>
-          <a className="text-2xl underline" href="tel:">999-999-9999</a>
+          <a className="text-2xl underline" href="mailto:">
+            info.therefresh@gmail.com
+          </a>
+          <a className="text-2xl underline" href="tel:">
+            999-999-9999
+          </a>
         </div>
 
         <div className="flex flex-col space-y-4 mb-8">
@@ -53,8 +57,6 @@ const Footer = () => {
         <p className=" text-lg">
           © {currentYear} Refresh. All Rights Reserved
         </p>
-
-
       </div>
     </footer>
   );
