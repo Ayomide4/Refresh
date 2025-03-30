@@ -123,7 +123,7 @@ const About = () => {
 
         {/* Render the carousels only if images have loaded */}
         {images.length > 0 && (
-          <div className="-mx-20">
+          <div className="overflow-hidden -mx-20">
             <ImageCarousel images={firstRow} direction="right" />
             <ImageCarousel images={secondRow} direction="left" />
           </div>

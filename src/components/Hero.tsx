@@ -36,7 +36,7 @@ const Hero = () => {
 
         <button
           onClick={() => scrollToSection("events")}
-          className="bg-primary hover:bg-primary/90 text-white font-normal text-xl  w-48 h-14 rounded-full shadow-lg transition-all transform hover:scale-105"
+          className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl  w-48 h-14 rounded-full shadow-lg transition-all transform hover:scale-105"
         >
           Our Events
         </button>

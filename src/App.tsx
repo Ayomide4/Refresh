@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen w-full bg-background" id="app">
+    <div className="flex flex-col min-h-screen w-full bg-background overflow-hidden" id="app">
       <Header />
       <main className="flex-grow">
         <About />

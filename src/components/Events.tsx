@@ -79,10 +79,11 @@ export const Events = () => {
             gap-6
             py-4
             my-6
-          -mx-20
-          pl-20
-          md:pl-28
-          md:-mx-28
+            md:mb-20
+            pl-10
+          md:pl-40
+            -mx-10
+          md:-mx-40
           "
           ref={containerRef}
         >
@@ -92,6 +93,22 @@ export const Events = () => {
           <div className="border-r-2 border-black border-dashed"></div>
           <EventCard />
           <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
+          <div className="border-r-2 border-black border-dashed"></div>
+          <EventCard />
         </div>
       </div>
     </section>
