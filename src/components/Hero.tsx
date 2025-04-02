@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import mountain from "../assets/transparent_sky_image.png";
+import ImageSkeleton from "./ImageSkeleton";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const heroContentRef = useRef<HTMLDivElement>(null);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -45,30 +47,40 @@ const Hero = () => {
       id="hero"
     >
       {/* Background Image */}
-      <img
-        src={mountain}
-        alt="Mountain"
-        className="absolute inset-0 w-full h-full object-cover object-top"
-      />
+      <div className="absolute inset-0 w-full h-full">
+        {!isImageLoaded && (
+          <ImageSkeleton
+            width="100%"
+            height="100%"
+            className="absolute"
+          />
+        )}
+        <img
+          src={mountain}
+          alt="Mountain"
+          className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={() => setIsImageLoaded(true)}
+        />
+      </div>
 
       {/* Hero Content */}
       <div
         ref={heroContentRef}
-        className="relative z-10 px-6 md:px-24 w-full text-black"
+        className="relative z-10 px-6 md:px-24 xl:px-32 2xl:px-40 w-full text-black"
       >
-        <h1 className="text-5xl md:text-8xl font-normal mb-0">
+        <h1 className="text-5xl md:text-8xl xl:text-[10rem] 2xl:text-[11rem] font-normal mb-0 2xl:mb-4">
           Stay Inspired.
         </h1>
-        <h1 className="text-5xl md:text-8xl font-normal mb-8">
+        <h1 className="text-5xl md:text-8xl xl:text-[10rem] 2xl:text-[11rem] font-normal mb-8 2xl:mb-12">
           Stay Connected.
         </h1>
-        <p className="text-xl md:text-2xl md:w-xl mb-8 font-light">
+        <p className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl md:w-xl xl:w-2xl 2xl:w-3xl mb-8 2xl:mb-10 font-light">
           Welcome to Refresh—your hub for all news, updates, and events related
           to the ministry.
         </p>
         <button
           onClick={() => scrollToSection("events")}
-          className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 rounded-full shadow-lg transition-all transform hover:scale-105"
+          className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl md:text-2xl xl:text-3xl 2xl:text-4xl w-48 md:w-56 xl:w-64 2xl:w-72 h-14 md:h-16 xl:h-20 2xl:h-24 rounded-full shadow-lg transition-all transform hover:scale-105"
         >
           Our Events
         </button>

@@ -1,13 +1,30 @@
+import { useState } from "react";
 import welcome from "../assets/welcome.jpg";
+import ImageSkeleton from "./ImageSkeleton";
 
 interface EventCardProps {
   src: string;
 }
 
 export const EventCard = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <article className="relative min-w-80 h-80 rounded-2xl overflow-hidden cursor-pointer">
-      <img src={welcome} alt="Event" className="w-full h-full object-cover" />
+      {!isLoaded && (
+        <ImageSkeleton
+          width="100%"
+          height="100%"
+          rounded
+          className="absolute"
+        />
+      )}
+      <img 
+        src={welcome} 
+        alt="Event" 
+        className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        onLoad={() => setIsLoaded(true)}
+      />
       <div
         className="absolute bottom-0 left-0 w-full h-32"
         style={{

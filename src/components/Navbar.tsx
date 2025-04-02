@@ -13,18 +13,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-4 px-6 md:px-14 w-full flex justify-between items-center bg-background">
+    <nav className="py-4 px-6 md:px-14 xl:px-20 2xl:px-24 w-full flex justify-between items-center bg-background">
       <div className="flex items-center md:hidden">
         <img src={logo} width={100} height={67} />
       </div>
 
-      <div className="hidden md:flex items-center ">
-        <img src={logo} width={140} height={90} />
+      <div className="hidden md:flex items-center">
+        <img src={logo} className="w-[140px] h-[90px] md:w-[160px] md:h-[100px] xl:w-[180px] xl:h-[120px] 2xl:w-[200px] 2xl:h-[140px]" />
       </div>
 
       <button
         onClick={() => scrollToSection("footer")}
-        className="font-medium text-xl underline underline-offset-8 hidden md:block cursor-pointer"
+        className="font-medium text-xl md:text-2xl xl:text-3xl 2xl:text-4xl underline underline-offset-8 md:block cursor-pointer hover:text-primary transition-colors"
       >
         Get in touch
       </button>

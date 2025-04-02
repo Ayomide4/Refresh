@@ -115,6 +115,7 @@ const About = () => {
         -mt-16        
         z-20
         shadow-lg
+        pb-10
       "
     >
       <div className="mx-6 md:mx-20 xl:mx-32 2xl:mx-40 pt-16" ref={aboutContentRef}>
