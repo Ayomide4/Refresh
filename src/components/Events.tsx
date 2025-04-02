@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import EventCard from "./EventCard";
 import welcome from "../assets/welcome.jpg";
 import { useEffect, useRef } from "react";
+import gsap from "gsap/all";
 
 // interface Event {
 //   id: number;
@@ -16,11 +17,38 @@ import { useEffect, useRef } from "react";
 
 export const Events = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollLeft = 0;
     }
+
+    if (headerRef.current) {
+      const q = gsap.utils.selector(headerRef)
+
+      const headings = q("h2")
+      const otherContent = q("h3, p")
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 10%",
+          toggleActions: "play none none none"
+        },
+      })
+        .fromTo(headings,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75, stagger: 0 })
+        // Then animate the rest of the content (p and button) to fade in
+        .fromTo(
+          otherContent,
+          { opacity: 0 },
+          { opacity: 1, duration: 1, },
+          "-=0.3" // overlap the fade-in slightly with the last heading
+        );
+    }
+
   }, []);
 
   return (
@@ -28,7 +56,7 @@ export const Events = () => {
       id="events"
       className="py-16 px-6  bg-[#E9E7EC] rounded-3xl z-30 -mt-10 relative"
     >
-      <div className=" md:mx-20 ">
+      <div className=" md:mx-20" ref={headerRef}>
         <h2 className="text-4xl md:text-9xl font-light md:font-extralight mb-8 md:mb-20 text-left ">
           Events
         </h2>

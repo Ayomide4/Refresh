@@ -1,11 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { Eye, HeartHandshake } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 const About = () => {
   // State to hold the dynamically loaded image URLs.
   const [images, setImages] = useState<string[]>([]);
   const statementRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const aboutContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (statementRef.current) {
@@ -29,6 +34,34 @@ const About = () => {
     Promise.all(importPromises).then((resolvedImages) => {
       setImages(resolvedImages);
     });
+
+
+    if (headerRef.current) {
+      // Create a selector scoped to heroContentRef
+      const q = gsap.utils.selector(aboutContentRef);
+      // Select the two h1 elements and the rest of the content (p and button)
+      const headings = q("h2");
+      const otherContent = q("p, article");
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 90%", // when the top of hero content hits 80% of viewport
+          toggleActions: "play none none none",
+        },
+      })
+
+        .fromTo(headings,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75, stagger: 0 })
+        // Then animate the rest of the content (p and button) to fade in
+        .fromTo(
+          otherContent,
+          { opacity: 0 },
+          { opacity: 1, duration: 1, },
+          "-=0.3" // overlap the fade-in slightly with the last heading
+        );
+    }
   }, []);
 
   // Once images are loaded, split them into two rows.
@@ -72,7 +105,8 @@ const About = () => {
     <section
       id="about"
       className="
-        relative
+       sticky 
+      top-[0vh]
         bg-white
         rounded-3xl
         -mt-16        
@@ -80,12 +114,12 @@ const About = () => {
         shadow-lg
       "
     >
-      <div className="mx-6 md:mx-20 pt-16">
-        <div className="flex flex-col md:flex-row w-full mb-20">
+      <div className="mx-6 md:mx-20 pt-16" ref={aboutContentRef}>
+        <div className="flex flex-col md:flex-row w-full mb-20" ref={headerRef}>
           <h2 className="text-5xl md:text-9xl font-light md:font-extralight mb-8 text-left md:w-1/2">
             About Us
           </h2>
-          <div className="md:w-1/2 text-xl font-light space-y-5">
+          <div className="md:w-1/2 text-xl font-light space-y-5" >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
