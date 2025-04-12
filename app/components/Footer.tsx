@@ -1,5 +1,6 @@
+"use client"
 import { ArrowUpRight } from "lucide-react";
-import logo from "@/public/logo.png";
+import logo from "@/public/logo1.png";
 import { scrollToSection } from "../utils/helper"
 import Image from "next/image"
 import Link from "next/link";
@@ -14,7 +15,7 @@ const Footer = () => {
     >
       <h1 className="my-8 text-5xl">Contact Us</h1>
 
-      <div className="flex flex-col md:flex-row w-full md:space-x-96">
+      <div className="flex flex-col md:flex-row w-full md:space-x-96 text-background">
         <div className="flex flex-col space-y-4 mb-12">
           <p className="text-xl text-[#787878]">Contact us</p>
           <a className="text-2xl underline" href="mailto:">
@@ -27,15 +28,15 @@ const Footer = () => {
 
         <div className="flex flex-col space-y-4 mb-8">
           <p className="text-xl text-[#787878]">Follow us</p>
-          <Link className="flex items-center space-x-2" href="/">
+          <Link className="flex items-center space-x-2 text-background" href="/">
             <p className="text-2xl">instagram</p>
             <ArrowUpRight size={24} />
           </Link>
-          <Link className="flex items-center space-x-2" href="/">
+          <Link className="flex items-center space-x-2 text-background" href="/">
             <p className="text-2xl">facebook</p>
             <ArrowUpRight size={24} />
           </Link>
-          <Link className="flex items-center space-x-2" href="/">
+          <Link className="flex items-center space-x-2 text-background" href="/">
             <p className="text-2xl">youtube</p>
             <ArrowUpRight size={24} />
           </Link>

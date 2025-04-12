@@ -1,46 +1,53 @@
-"use client"
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import Link from "next/link";
+import Image from "next/image";
 import { DonationForm } from "./DonationForm";
 import cashApp from "@/public/cash-app.svg";
 import zelle from "@/public/zelle.svg";
-import Image from "next/image"
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-
+import paypal from "@/public/paypal.svg";
 
 const Donation = () => {
-
+  const [copied, setCopied] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
   const divContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (titleRef.current) {
-      // Create a selector scoped to heroContentRef
+      // Create a selector scoped to divContentRef
       const q = gsap.utils.selector(divContentRef);
-      // Select the two h1 elements and the rest of the content (p and button)
+      // Select the h2 elements and the rest of the content (p and article)
       const headings = q("h2");
       const otherContent = q("p, article");
 
       gsap.timeline({
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 90%", // when the top of hero content hits 80% of viewport
+          start: "top 90%",
           toggleActions: "play none none none",
         },
       })
-
-        .fromTo(headings,
+        .fromTo(
+          headings,
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.75, stagger: 0 })
-        // Then animate the rest of the content (p and button) to fade in
+          { y: 0, opacity: 1, duration: 0.75, stagger: 0 }
+        )
         .fromTo(
           otherContent,
           { opacity: 0 },
-          { opacity: 1, duration: 1, },
-          "-=0.3" // overlap the fade-in slightly with the last heading
+          { opacity: 1, duration: 1 },
+          "-=0.3"
         );
     }
-  }, [])
+  }, []);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText("682-583-1240");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section
@@ -48,14 +55,14 @@ const Donation = () => {
       className="py-20 px-6 md:px-12 lg:px-20 bg-[#222222] rounded-t-3xl relative -mt-10 z-40"
       ref={divContentRef}
     >
-      <div className="md:mx-20  text-left flex flex-col items-center" ref={titleRef}>
+      <div className="md:mx-20 text-left flex flex-col items-center" ref={titleRef}>
         {/* Section Heading */}
-        <h2 className="text-4xl text-center  md:text-7xl font-medium mb-6 text-white">
+        <h2 className="text-4xl text-center md:text-7xl font-medium mb-6 text-white">
           Support Our Vision
         </h2>
 
         {/* Description */}
-        <p className="text-xl text-center  mb-8 max-w-2xl  text-white">
+        <p className="text-xl text-center mb-8 max-w-2xl text-white">
           Your generous donation helps us create more opportunities for
           spiritual growth and community building. Every contribution makes a
           difference in our ability to serve and expand our reach.
@@ -71,31 +78,53 @@ const Donation = () => {
           </h3>
 
           {/* Icons with Placeholder Links */}
-          <div className="flex w-full justify-evenly items-center gap-6">
-            <a
-              href="#"
-              className="inline-flex flex-col items-center hover:opacity-70 transition-opacity"
+          <div className="flex w-full justify-evenly  gap-6">
+            <Link
+              href="https://cash.app/$refreshdfw"
+              target="_blank"
+              className="inline-flex flex-col items-center hover:opacity-70 transition-opacity mt-2"
             >
               <Image
                 src={cashApp}
-                alt="CashApp"
+                alt="CashApp Logo"
                 width={100}
                 height={100}
                 className="mb-2"
               />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <div className="inline-flex flex-col items-center hover:opacity-70 transition-opacity mt-2 ">
+              <Image
+                src={zelle}
+                alt="Zelle Logo"
+                width={100}
+                height={100}
+                className="mb-2"
+              />
+              <p className="font-bold text-white">
+                Send via Zelle:{" "}
+                <span
+                  onClick={handleCopy}
+                  className="underline cursor-pointer hover:text-gray-300 transition"
+                >
+                  682-583-1240
+                </span>
+              </p>
+              {copied && (
+                <span className="ml-2 text-sm text-green-400">Copied!</span>
+              )}
+            </div>
+            <Link
+              href="https://paypal.me/refreshdfw"
+              target="_blank"
               className="inline-flex flex-col items-center hover:opacity-70 transition-opacity"
             >
               <Image
-                src={zelle}
-                alt="Zelle"
+                src={paypal}
+                alt="Paypal Logo"
                 width={100}
                 height={100}
-                className="mb-2"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
