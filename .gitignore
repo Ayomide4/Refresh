@@ -41,4 +41,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/Refresh_Montage.mp4
+
+web/public/Refresh_Montage.mp4
+web/node_modules/
+
