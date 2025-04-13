@@ -2,6 +2,7 @@
 import { useState } from "react";
 import logo from "@/public/logo1.png"
 import Image from "next/image";
+import Link from "next/link";
 
 
 const Navbar = () => {
@@ -17,13 +18,13 @@ const Navbar = () => {
 
   return (
     <nav className="absolute z-10 top-0 left-8 right-8 py-4 flex justify-between items-center md:mt-5">
-      <div className="flex items-center md:hidden cursor-pointer">
+      <Link className="flex items-center md:hidden cursor-pointer" href="/">
         <Image src={logo} width={100} height={67} alt="MyRefresh Logo" />
-      </div>
+      </Link>
 
-      <div className="hidden md:flex items-center cursor-pointer">
+      <Link className="hidden md:flex items-center cursor-pointer" href="/">
         <Image src={logo} width={120} height={60} alt="MyRefresh Logo" />
-      </div>
+      </Link>
 
       <button
         onClick={() => scrollToSection("footer")}

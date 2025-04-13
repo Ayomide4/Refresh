@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { Eye, HeartHandshake } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
 import gsap from "gsap";
+import Link from "next/link";
 
 const imageFilenames = [
   "IMG_0011.jpg",
@@ -174,11 +175,13 @@ const About = () => {
 
 
       </div>
-      <button
-        className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 mt-5 rounded-full shadow-lg transition-all transform hover:scale-105"
-      >
-        Our Gallery
-      </button>
+      <Link href="/gallery">
+        <button
+          className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 mt-5 rounded-full shadow-lg transition-all transform hover:scale-105"
+        >
+          Our Gallery
+        </button>
+      </Link>
     </section>
   );
 };
