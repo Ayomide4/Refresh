@@ -16,27 +16,38 @@ const Hero = () => {
     }
   };
 
+
   useEffect(() => {
     if (heroContentRef.current) {
-      // Create a selector scoped to heroContentRef
       const q = gsap.utils.selector(heroContentRef);
-      // Select the two h1 elements and the rest of the content (p and button)
       const headings = q("h1");
       const otherContent = q("p, button");
 
-      // Create a timeline that triggers on scroll
-      gsap.timeline()
-        // Animate the h1 elements: move from 50px below and invisible, to their natural position
-        .fromTo(headings,
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.75, stagger: 0.3 })
-        // Then animate the rest of the content (p and button) to fade in
-        .fromTo(
-          otherContent,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.2, },
-          "-=0.3" // overlap the fade-in slightly with the last heading
-        );
+      // Animate on page load (no ScrollTrigger)
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        headings,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+          ease: "power2.out",
+          stagger: 0.3,
+        }
+      ).fromTo(
+        otherContent,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "none",
+          stagger: 0.1,
+        },
+        "-=0.4" // overlap with the end of heading animation
+      );
     }
   }, []);
 
@@ -63,7 +74,9 @@ const Hero = () => {
         <div className="absolute top-0 bottom-0 left-0 right-0  bg-black/40  z-10" />
 
         {/* Centered Text Content */}
-        <div className="absolute inset-0  flex flex-col items-center justify-center text-center text-white z-20">
+        <div className="absolute inset-0  flex flex-col items-center justify-center text-center text-white z-20"
+          ref={heroContentRef}
+        >
           <h1 className="text-5xl md:text-8xl font-normal mb-0">
             Stay Inspired.
           </h1>
@@ -81,31 +94,7 @@ const Hero = () => {
             Our Events
           </button>
         </div>
-
       </div>
-
-      {/* Hero Content */}
-      {/* <div */}
-      {/*   ref={heroContentRef} */}
-      {/*   className="relative z-10 px-6 md:px-24 w-full text-black" */}
-      {/* > */}
-      {/*   <h1 className="text-5xl md:text-8xl font-normal mb-0"> */}
-      {/*     Stay Inspired. */}
-      {/*   </h1> */}
-      {/*   <h1 className="text-5xl md:text-8xl font-normal mb-8"> */}
-      {/*     Stay Connected. */}
-      {/*   </h1> */}
-      {/*   <p className="text-xl md:text-2xl md:w-xl mb-8 font-light"> */}
-      {/*     Welcome to Refresh—your hub for all news, updates, and events related */}
-      {/*     to the ministry. */}
-      {/*   </p> */}
-      {/*   <button */}
-      {/*     onClick={() => scrollToSection("events")} */}
-      {/*     className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 rounded-full shadow-lg transition-all transform hover:scale-105" */}
-      {/*   > */}
-      {/*     Our Events */}
-      {/*   </button> */}
-      {/* </div> */}
     </div >
   );
 };

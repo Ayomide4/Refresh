@@ -31,9 +31,6 @@ export const Events = ({ events }: EventProps) => {
     return <EventCard event={event} imageUrl={imageUrl} key={index} />
   })
 
-
-  console.log(events)
-  // console.log(formattedDate, formattedTime)
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollLeft = 0;
@@ -43,7 +40,7 @@ export const Events = ({ events }: EventProps) => {
       const q = gsap.utils.selector(headerRef)
 
       const headings = q("h2")
-      const otherContent = q("h3, p, a")
+      const otherContent = q("h3, h4, p, a")
 
       gsap.timeline({
         scrollTrigger: {
@@ -58,10 +55,14 @@ export const Events = ({ events }: EventProps) => {
         // Then animate the rest of the content (p and button) to fade in
         .fromTo(
           otherContent,
-          { opacity: 0 },
-          { opacity: 1, duration: 1, },
-          "-=0.3" // overlap the fade-in slightly with the last heading
-        );
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            ease: "power3.out",
+            stagger: 0.05,
+          },);
     }
 
   }, []);
@@ -112,10 +113,9 @@ export const Events = ({ events }: EventProps) => {
 
 
 
-              <div className="font-light text-xl md:text-2xl">
+              <p className="font-light text-xl md:text-2xl">
                 {currentEvent.body}
-
-              </div>
+              </p>
 
 
 

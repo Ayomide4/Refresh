@@ -63,13 +63,18 @@ const About = () => {
 
         .fromTo(headings,
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.75, stagger: 0 })
+          { y: 0, opacity: 1, duration: 0.75, stagger: 0, ease: "power2.out" })
         // Then animate the rest of the content (p and button) to fade in
         .fromTo(
           otherContent,
-          { opacity: 0 },
-          { opacity: 1, duration: 1, },
-          "-=0.3" // overlap the fade-in slightly with the last heading
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            ease: "power3.out",
+            stagger: 0.1,
+          },
         );
     }
   }, []);
