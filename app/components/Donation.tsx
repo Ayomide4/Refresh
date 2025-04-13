@@ -78,7 +78,7 @@ const Donation = () => {
           </h3>
 
           {/* Icons with Placeholder Links */}
-          <div className="flex w-full justify-evenly  gap-6">
+          <div className="flex flex-col md:flex-row w-full justify-evenly  gap-6">
             <Link
               href="https://cash.app/$refreshdfw"
               target="_blank"
@@ -87,8 +87,8 @@ const Donation = () => {
               <Image
                 src={cashApp}
                 alt="CashApp Logo"
-                width={100}
-                height={100}
+                width={200}
+                height={200}
                 className="mb-2"
               />
             </Link>

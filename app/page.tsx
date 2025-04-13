@@ -5,11 +5,13 @@ import Events from "./components/Events";
 import Donation from "./components/Donation";
 import Footer from "./components/Footer";
 import { fetchEvents } from "./lib/fetchEvents";
+import { Event } from "./types";
 
-const events = await fetchEvents()
+
+const events: Event[] = await fetchEvents()
 export default function Home() {
-  console.log(events)
 
+  // console.log(events)
   return (
     <div className="flex flex-col min-h-screen w-full bg-background overflow-hidden" id="app">
       <header className="relative w-full">
@@ -19,7 +21,7 @@ export default function Home() {
       <main className="flex-grow">
 
         <About />
-        <Events />
+        <Events events={events} />
         <Donation />
       </main>
 
