@@ -45,14 +45,16 @@ const Footer = () => {
       <div className="border-b-2 border-background my-10"></div>
 
       <div className="flex flex-col space-y-4 mb-4 md:flex-row justify-between items-center md:mb-0 md:space-y-0">
-        <Image
-          src={logo}
-          width={120}
-          height={80}
-          onClick={() => scrollToSection("app")}
-          className="object-cover cursor-pointer"
-          alt="Refresh Logo"
-        />
+        <Link href="/">
+          <Image
+            src={logo}
+            width={120}
+            height={80}
+            onClick={() => scrollToSection("app")}
+            className="object-cover cursor-pointer"
+            alt="Refresh Logo"
+          />
+        </Link>
 
         <p className="text-lg">
           Designed by <a className="underline">Lone Star Web Studio</a>

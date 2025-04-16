@@ -1,16 +1,16 @@
-
-// components/Gallery.tsx
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
+
+import { ChevronRight, ChevronLeft, X } from "lucide-react";
 
 interface GalleryProps {
   images: string[];
 }
 
 export default function Gallery({ images }: GalleryProps) {
-  const columns = 4;        // images per row
+  const columns = 3;        // images per row
   const rows = 2;           // number of rows to show
   const pageSize = columns * rows; // total images per page
 
@@ -37,19 +37,21 @@ export default function Gallery({ images }: GalleryProps) {
   return (
     <div>
       {/* Gallery Grid */}
-      <div className="relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+      <div className="relative h-[calc(4rem*2+2rem)] md:h-[calc((100vw/3)*(3/4)*2+2rem)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 ">
           {displayImages.map((src, idx) => (
             <div
               key={start + idx}
-              className="relative w-full h-48 cursor-pointer"
+
+              className="relative w-full aspect-[4/3]  cursor-pointer rounded-lg overflow-hidden"
+
               onClick={() => openModal(src)}
             >
               <Image
                 src={src}
                 alt={`Gallery image ${start + idx + 1}`}
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover rounded-lg "
               />
             </div>
           ))}
@@ -59,17 +61,16 @@ export default function Gallery({ images }: GalleryProps) {
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 0))}
           disabled={page === 0}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
         >
-          ◀
+          <ChevronLeft className="text-black" />
         </button>
         <button
           onClick={() => setPage((p) => Math.min(p + 1, maxPage))}
           disabled={page === maxPage}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
         >
-          ▶
-        </button>
+          <ChevronRight className="text-black" />        </button>
       </div>
 
       {/* Modal */}
@@ -79,26 +80,23 @@ export default function Gallery({ images }: GalleryProps) {
           onClick={closeModal}
         >
           <div
-            className="relative max-w-3xl max-h-full"
+            className="relative w-[90vw] max-w-5xl aspect-[4/3] rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={modalImage}
               alt="Modal image"
-              width={800}
-              height={600}
-              className="object-contain rounded"
+              fill
+              className="object-contain"
             />
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-white bg-gray-800 p-2 rounded"
+              className="absolute top-2 right-2 text-white bg-black cursor-pointer p-2 rounded z-10"
             >
-              Close
-            </button>
+              <X />            </button>
           </div>
         </div>
-      )}
-    </div>
+      )}    </div>
   );
 }
 
