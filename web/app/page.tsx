@@ -4,6 +4,7 @@ import Events from "./components/Events";
 import Donation from "./components/Donation";
 import { fetchEvents } from "./lib/fetchEvents";
 import { Event } from "./types";
+import Footer from "./components/Footer";
 
 
 const events: Event[] = await fetchEvents()
@@ -21,6 +22,9 @@ export default function Home() {
         <Events events={events} />
         <Donation />
       </main>
+
+      <Footer />
     </div>
+
   );
 }

@@ -1,5 +1,5 @@
 "use client"
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, SquareArrowUp } from "lucide-react";
 import logo from "@/public/logo1.png";
 import { scrollToSection } from "../utils/helper"
 import Image from "next/image"
@@ -7,6 +7,8 @@ import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  //TODO: add back to top button
 
   return (
     <footer
@@ -21,9 +23,9 @@ const Footer = () => {
           <a className="text-2xl underline" href="mailto:">
             info.therefresh@gmail.com
           </a>
-          {/* <a className="text-2xl underline" href="tel:"> */}
-          {/*   999-999-9999 */}
-          {/* </a> */}
+          <a className="text-2xl underline" href="tel:">
+            682-583-1240
+          </a>
         </div>
 
         <div className="flex flex-col space-y-4 mb-8">
@@ -42,27 +44,37 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      <p className="md:hidden text-lg">
+        Designed by <a className="underline">Lone Star Web Studio</a>
+      </p>
       <div className="border-b-2 border-background my-10"></div>
 
       <div className="flex flex-col space-y-4 mb-4 md:flex-row justify-between items-center md:mb-0 md:space-y-0">
-        <Link href="/">
-          <Image
-            src={logo}
-            width={120}
-            height={80}
-            onClick={() => scrollToSection("app")}
-            className="object-cover cursor-pointer"
-            alt="Refresh Logo"
-          />
-        </Link>
+        {/* <Link href="/"> */}
+        {/*   <Image */}
+        {/*     src={logo} */}
+        {/*     width={120} */}
+        {/*     height={80} */}
+        {/*     onClick={() => scrollToSection("app")} */}
+        {/*     className="object-cover cursor-pointer" */}
+        {/*     alt="Refresh Logo" */}
+        {/*   /> */}
+        {/* </Link> */}
 
-        <p className="text-lg">
+
+
+        <p className="  text-lg">
+          © {currentYear} Refresh. All Rights Reserved
+        </p>
+
+        <p className="hidden md:block text-lg">
           Designed by <a className="underline">Lone Star Web Studio</a>
         </p>
 
-        <p className=" text-lg">
-          © {currentYear} Refresh. All Rights Reserved
-        </p>
+        <button className="flex items-center md:text-lg space-x-2 cursor-pointer" onClick={() => scrollToSection("hero")}>
+          <p>Back to top</p>
+          <SquareArrowUp />
+        </button>
       </div>
     </footer>
   );

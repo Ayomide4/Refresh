@@ -3,6 +3,7 @@
 import fs from "fs";
 import path from "path";
 import Gallery from "../components/Gallery"
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Gallery – Refresh",
@@ -17,7 +18,7 @@ export default async function GalleryPage() {
     .map((name) => `/about/${name}`); // turn into public URL
 
   return (
-    <main className="min-h-screen px-6 py-12 text-black">
+    <main className="min-h-screen px-6 py-12 text-white bg-gray-500 ">
       <h1 className="text-3xl md:text-6xl font-bold text-center mb-8 mt-20">
         Our Gallery
       </h1>
@@ -27,6 +28,8 @@ export default async function GalleryPage() {
 
       {/* pass the dynamic list of images */}
       <Gallery images={files} />
+
+      <Footer />
     </main>
   );
 }

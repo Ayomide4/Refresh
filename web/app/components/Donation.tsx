@@ -69,38 +69,42 @@ const Donation = () => {
         </p>
 
         {/* Donation Form */}
-        <DonationForm />
+        {/* <DonationForm /> */}
 
         {/* Alternative Donation Methods */}
         <div className="space-y-4 mt-10">
-          <h3 className="text-white text-2xl font-semibold text-center">
-            Other ways to Donate
-          </h3>
+          {/* <h3 className="text-white text-2xl font-semibold text-center"> */}
+          {/*   Other ways to Donate */}
+          {/* </h3> */}
 
           {/* Icons with Placeholder Links */}
-          <div className="flex flex-col md:flex-row w-full justify-evenly  gap-6">
+          <div className="flex flex-col md:flex-row w-full justify-evenly gap-6">
+            {/* CashApp */}
             <Link
               href="https://cash.app/$refreshdfw"
               target="_blank"
-              className="inline-flex flex-col items-center hover:opacity-70 transition-opacity mt-2"
+              className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4"
             >
               <Image
                 src={cashApp}
                 alt="CashApp Logo"
-                width={200}
-                height={200}
-                className="mb-2"
+                width={80}
+                height={80}
+                className="w-40 mb-2"
               />
+              <p className="font-bold text-white">$Refreshdfw</p>
             </Link>
-            <div className="inline-flex flex-col items-center hover:opacity-70 transition-opacity mt-2 ">
+
+            {/* Zelle */}
+            <div className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4">
               <Image
                 src={zelle}
                 alt="Zelle Logo"
-                width={100}
-                height={100}
-                className="mb-2"
+                width={80}
+                height={80}
+                className="w-40 mb-2"
               />
-              <p className="font-bold text-white">
+              <p className="font-bold text-white text-sm">
                 Send via Zelle:{" "}
                 <span
                   onClick={handleCopy}
@@ -110,20 +114,24 @@ const Donation = () => {
                 </span>
               </p>
               {copied && (
-                <span className="ml-2 text-sm text-green-400">Copied!</span>
+                <span className="text-sm text-green-400 mt-1">Copied!</span>
               )}
             </div>
+
+            {/* PayPal */}
             <Link
               href="https://paypal.me/refreshdfw"
               target="_blank"
-              className="inline-flex flex-col items-center hover:opacity-70 transition-opacity"
+              className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4 -mt-4"
             >
               <Image
                 src={paypal}
                 alt="Paypal Logo"
-                width={100}
-                height={100}
+                width={80}
+                height={80}
+                className="w-40 mb-8"
               />
+              <p className="font-bold text-white">PayPal.me/refreshdfw</p>
             </Link>
           </div>
         </div>

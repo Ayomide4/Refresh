@@ -71,21 +71,21 @@ const Hero = () => {
         </video>
 
         {/* Black Overlay */}
-        <div className="absolute top-0 bottom-0 left-0 right-0  bg-black/40  z-10" />
+        <div className="absolute top-0 bottom-0 left-0 right-0  bg-black/70  z-10" />
 
         {/* Centered Text Content */}
         <div className="absolute inset-0  flex flex-col items-center justify-center text-center text-white z-20"
           ref={heroContentRef}
         >
-          <h1 className="text-5xl md:text-8xl font-normal mb-0">
-            Stay Inspired.
+          <h1 className="text-5xl md:text-8xl font-semibold mb-0" style={{ WebkitTextStroke: '1px white', color: 'transparent' }}>
+            REFRESH
           </h1>
-          <h1 className="text-5xl md:text-8xl font-normal mb-0">
-            Stay Connected.
-          </h1>
-          <p className="text-xl md:text-3xl md:w-xl mb-8 font-light mt-10">
-            Welcome to Refresh—your hub for all news, updates, and events related
-            to the ministry.
+          <h1>An Encounter with the Father</h1>
+          {/* <h1 className="text-5xl md:text-8xl font-semibold mb-0"> */}
+          {/*   Stay Connected. */}
+          {/* </h1> */}
+          <p className="text-xl md:text-2xl md:w-xl mb-8 font-light mt-10">
+            Welcome to the official website of Refresh. This is your hub for all news and updates for every edition. Stay tuned.
           </p>
           <button
             onClick={() => scrollToSection("events")}
