@@ -77,12 +77,12 @@ const Donation = () => {
           {/* </h3> */}
 
           {/* Icons with Placeholder Links */}
-          <div className="flex flex-col md:flex-row w-full justify-evenly gap-6">
+          <div className="flex flex-col md:flex-row w-full justify-evenly md:gap-6 ">
             {/* CashApp */}
             <Link
               href="https://cash.app/$refreshdfw"
               target="_blank"
-              className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4"
+              className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4"
             >
               <Image
                 src={cashApp}
@@ -95,7 +95,7 @@ const Donation = () => {
             </Link>
 
             {/* Zelle */}
-            <div className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4">
+            <div className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4">
               <Image
                 src={zelle}
                 alt="Zelle Logo"
@@ -121,7 +121,7 @@ const Donation = () => {
             <Link
               href="https://paypal.me/refreshdfw"
               target="_blank"
-              className="flex flex-col justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 h-60 p-4 -mt-4"
+              className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4 -mt-4"
             >
               <Image
                 src={paypal}

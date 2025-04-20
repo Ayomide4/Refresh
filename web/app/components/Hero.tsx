@@ -6,6 +6,8 @@ import { scrollToSection } from "../utils/helper";
 
 gsap.registerPlugin(ScrollTrigger);
 
+//FIX: video on google chrome
+
 export default function Hero() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
