@@ -1,8 +1,6 @@
 "use client"
 import { ArrowUpRight, SquareArrowUp } from "lucide-react";
-import logo from "@/public/logo1.png";
 import { scrollToSection } from "../utils/helper"
-import Image from "next/image"
 import Link from "next/link";
 
 const Footer = () => {
@@ -45,7 +43,9 @@ const Footer = () => {
         </div>
       </div>
       <p className="md:hidden text-lg">
-        Designed by <a className="underline">Lone Star Web Studio</a>
+        Designed by
+        <Link href="mailto:info@lonestarwebstudio.com"
+          className="underline">Lone Star Web Studio</Link>
       </p>
       <div className="border-b-2 border-background my-10"></div>
 

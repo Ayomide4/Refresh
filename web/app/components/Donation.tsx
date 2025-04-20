@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
-import { DonationForm } from "./DonationForm";
 import cashApp from "@/public/cash-app.svg";
 import zelle from "@/public/zelle.svg";
 import paypal from "@/public/paypal.svg";

@@ -1,3 +1,4 @@
+// @ts-ignore - Ignoring next-sanity type error due to module resolution issue
 import { createClient } from "next-sanity";
 
 export const client = createClient({

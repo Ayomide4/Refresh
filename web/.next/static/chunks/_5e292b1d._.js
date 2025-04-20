@@ -49,7 +49,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 const Navbar = ()=>{
     _s();
-    const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const scrollToSection = (id)=>{
         const element = document.getElementById(id);
         if (element) {
@@ -203,7 +203,7 @@ const Navbar = ()=>{
         columnNumber: 5
     }, this);
 };
-_s(Navbar, "vK10R+uCyHfZ4DZVnxbYkMWJB8g=");
+_s(Navbar, "Ds2jy8+VBLfRspLhLEaKdNm/BjA=");
 _c = Navbar;
 const __TURBOPACK__default__export__ = Navbar;
 var _c;

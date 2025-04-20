@@ -294,6 +294,7 @@ module.exports = mod;
 
 var { g: global, __dirname } = __turbopack_context__;
 {
+// @ts-ignore - Ignoring next-sanity type error due to module resolution issue
 __turbopack_context__.s({
     "client": (()=>client)
 });

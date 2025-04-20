@@ -9,8 +9,6 @@ import { urlFor } from "../lib/sanityImage"
 import { Event } from "../types";
 import { format } from 'date-fns';
 
-//TODO: add programtic way of displayin next events and past events refer to calendar
-
 
 interface EventProps {
   events: Event[]
