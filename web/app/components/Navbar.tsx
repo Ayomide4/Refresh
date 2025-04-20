@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="absolute z-10 top-0 left-8 right-8 py-4 flex justify-between items-center md:mt-5">
+    <nav className="absolute z-30 top-0 left-8 right-8 py-4 flex justify-between items-center md:mt-5">
       {/* Logo */}
       <Link href="/">
         <div className="flex items-center">
@@ -26,7 +26,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-6">
-        <Link href="/" className="relative group">
+        <Link href="/" className="relative group cursor-pointer">
           <span className="font-medium text-xl text-white">Home</span>
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
         </Link>
