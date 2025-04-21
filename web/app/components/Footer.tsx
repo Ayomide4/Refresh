@@ -3,75 +3,66 @@ import { ArrowUpRight, SquareArrowUp } from "lucide-react";
 import { scrollToSection } from "../utils/helper"
 import Link from "next/link";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+interface FooterProps {
+  backgroundColor?: string;
+  textColor?: string;
+}
 
-  //TODO: add back to top button
+const Footer = ({ backgroundColor, textColor }: FooterProps) => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      className="bg-[#222222] max-w-full m-4 text-background rounded-3xl p-4 md:p-10 mt-10"
+      className={`${backgroundColor ? backgroundColor : "bg-[#222222]"} ${textColor ? textColor : ""} max-w-full m-4 rounded-3xl p-4 md:p-10 mt-10`}
       id="footer"
     >
-      <h1 className="my-8 text-5xl">Contact Us</h1>
+      <h1 className={`my-8 text-5xl ${textColor ?? "text-background"}`}>Contact Us</h1>
 
-      <div className="flex flex-col md:flex-row w-full md:space-x-96 text-background">
+      <div className={`flex flex-col md:flex-row w-full md:space-x-96 ${textColor ?? "text-background"}`}>
         <div className="flex flex-col space-y-4 mb-12">
           <p className="text-xl text-[#787878]">Contact us</p>
-          <a className="text-2xl underline" href="mailto:">
+          <a className={`text-2xl underline ${textColor ?? "text-background"}`} href="mailto:">
             info.therefresh@gmail.com
           </a>
-          <a className="text-2xl underline" href="tel:">
+          <a className={`text-2xl underline ${textColor ?? "text-background"}`} href="tel:">
             682-583-1240
           </a>
         </div>
 
         <div className="flex flex-col space-y-4 mb-8">
           <p className="text-xl text-[#787878]">Follow us</p>
-          <Link className="flex items-center space-x-2 text-background" href="https://www.instagram.com/therefreshgathering?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+          <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.instagram.com/therefreshgathering?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
             <p className="text-2xl">instagram</p>
             <ArrowUpRight size={24} />
           </Link>
-          <Link className="flex items-center space-x-2 text-background" href="https://www.facebook.com/people/The-Refresh-Gathering/100091409076993/" target="_blank" rel="noopener noreferrer">
+          <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.facebook.com/people/The-Refresh-Gathering/100091409076993/" target="_blank" rel="noopener noreferrer">
             <p className="text-2xl">facebook</p>
             <ArrowUpRight size={24} />
           </Link>
-          <Link className="flex items-center space-x-2 text-background" href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer">
+          <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer">
             <p className="text-2xl">youtube</p>
             <ArrowUpRight size={24} />
           </Link>
         </div>
       </div>
-      <p className="md:hidden text-lg">
-        Designed by
-        <Link href="mailto:info@lonestarwebstudio.com"
-          className="underline">Lone Star Web Studio</Link>
+
+      <p className={`md:hidden text-lg ${textColor ?? "text-background"}`}>
+        Designed by{" "}
+        <a href="mailto:info@lonestarwebstudio.com" className="cursor-pointer underline">Lone Star Web Studio</a>
       </p>
-      <div className="border-b-2 border-background my-10"></div>
+
+      <div className={`border-b-2 ${textColor ? "border-black" : "border-background"} my-10`}></div>
 
       <div className="flex flex-col space-y-4 mb-4 md:flex-row justify-between items-center md:mb-0 md:space-y-0">
-        {/* <Link href="/"> */}
-        {/*   <Image */}
-        {/*     src={logo} */}
-        {/*     width={120} */}
-        {/*     height={80} */}
-        {/*     onClick={() => scrollToSection("app")} */}
-        {/*     className="object-cover cursor-pointer" */}
-        {/*     alt="Refresh Logo" */}
-        {/*   /> */}
-        {/* </Link> */}
-
-
-
-        <p className="  text-lg">
+        <p className={`text-lg ${textColor ?? "text-background"}`}>
           © {currentYear} Refresh. All Rights Reserved
         </p>
 
-        <p className="hidden md:block text-lg">
+        <p className={`hidden md:block text-lg ${textColor ?? "text-background"}`}>
           Designed by <a className="underline">Lone Star Web Studio</a>
         </p>
 
-        <button className="flex items-center md:text-lg space-x-2 cursor-pointer" onClick={() => scrollToSection("hero")}>
+        <button className={`flex items-center md:text-lg space-x-2 cursor-pointer ${textColor ?? "text-background"}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <p>Back to top</p>
           <SquareArrowUp />
         </button>

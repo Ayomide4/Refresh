@@ -38,6 +38,15 @@ const Navbar = () => {
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
         </button>
 
+        <button
+          onClick={() => scrollToSection("events")}
+          className="relative group focus:outline-none cursor-pointer"
+        >
+          <span className="font-medium text-xl text-white">Events</span>
+          <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+        </button>
+
+
         <Link href="/gallery" className="relative group">
           <span className="font-medium text-xl text-white">Gallery</span>
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -49,7 +58,8 @@ const Navbar = () => {
         >
           <span className="font-medium text-xl text-white">Donate</span>
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-        </button>      </div>
+        </button>
+      </div>
 
       {/* Mobile Menu Toggle */}
       {/* <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white"> */}
