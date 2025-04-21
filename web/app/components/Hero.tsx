@@ -6,8 +6,6 @@ import { scrollToSection } from "../utils/helper";
 
 gsap.registerPlugin(ScrollTrigger);
 
-//FIX: video on google chrome
-
 export default function Hero() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -66,33 +64,24 @@ export default function Hero() {
       <div
         ref={heroContentRef}
         className="
-          mb-40
-          w-full md:w-1/2
-          flex flex-col
-          px-6 md:px-14
-          pt-4 lg:pt-40
-          text-white
-          z-20
-        text-center
-        md:text-left
-        md:h-full
-        "
+          flex flex-col md:self-center w-full h-full md:pt-40 mb-32 md:mb-0 md:w-1/2 px-5 md:px-14  text-white text-center md:text-left z-20"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-5">
+
+        <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold">
           An Encounter with the Father
         </h1>
-        <p className="mt-4 text-lg md:text-2xl font-light max-w-lg">
+        <p className="text-lg md:text-2xl font-light max-w-lg  mt-5">
           Welcome to the official website of REFRESH. This is your hub for all news
           and updates for every edition. Stay tuned.
         </p>
         <button
           onClick={() => scrollToSection("events")}
           className="
+          cursor-pointer
           self-center
-          md:self-start
-            mt-10
+          md:self-start mt-10
             w-48 h-14
-            bg-primary hover:bg-primary/90
+            bg-primary hover:bg-primary/60
             text-white font-normal text-xl
             rounded-full shadow-lg
             transition-all transform hover:scale-105
@@ -100,6 +89,7 @@ export default function Hero() {
         >
           Our Events
         </button>
+
       </div>
 
       {/* Video */}
@@ -112,13 +102,13 @@ export default function Hero() {
           loop
           className="w-full h-full object-cover z-10"
         >
-          <source src="/Refresh_Montage.mp4" type="video/mp4" />
+          <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* overlay: now truly “invisible” to pointer events */}
 
         <div className="absolute inset-0 pointer-events-none md:bg-black/50"></div>
       </div>
-    </div>
+    </div >
   );
 }

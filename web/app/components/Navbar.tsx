@@ -28,7 +28,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop menu */}
-      <div className="hidden md:flex space-x-6 text-white">
+      <div className="hidden lg:flex space-x-6 text-white">
         <button onClick={() => handleNavClick("hero")} className="group relative">
           <span className="font-medium text-xl">Home</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
@@ -54,7 +54,7 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-white"
+        className="lg:hidden text-white"
         aria-label="Toggle menu"
       >
         <Menu width={32} height={32} />
