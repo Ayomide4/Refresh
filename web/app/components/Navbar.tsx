@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className="absolute z-30 top-0 left-0 right-0 flex items-center justify-between px-6 py-4 md:px-14">
       {/* Logo */}
       <Link href="/">
-        <Image src={logo} width={120} height={60} alt="MyRefresh Logo" />
+        <Image src={logo} width={120} height={60} alt="MyRefresh Logo" className="h-auto w-[120px]" />
       </Link>
 
       {/* Desktop menu */}
