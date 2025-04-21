@@ -17,13 +17,13 @@ const Footer = ({ backgroundColor, textColor }: FooterProps) => {
     >
       <h1 className={`my-8 text-5xl ${textColor ?? "text-background"}`}>Contact Us</h1>
 
-      <div className={`flex flex-col md:flex-row w-full md:space-x-96 ${textColor ?? "text-background"}`}>
+      <div className={`flex flex-col md:flex-row w-full md:space-x-40 lg:space-x-96 ${textColor ?? "text-background"} 2xl:space-x-[500px]`}>
         <div className="flex flex-col space-y-4 mb-12">
           <p className="text-xl text-[#787878]">Get in touch</p>
-          <a className={`text-2xl underline ${textColor ?? "text-background"}`} href="mailto:">
+          <a className={`text-xl md:text-2xl underline ${textColor ?? "text-background"}`} href="mailto:">
             info.therefresh@gmail.com
           </a>
-          <a className={`text-2xl underline ${textColor ?? "text-background"}`} href="tel:">
+          <a className={`text-xl md:text-2xl underline ${textColor ?? "text-background"}`} href="tel:">
             682-583-1240
           </a>
         </div>

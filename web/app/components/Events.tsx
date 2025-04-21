@@ -88,10 +88,10 @@ export const Events = ({ events }: EventProps) => {
             />
 
             <div className="space-y-3 mt-8 md:mt-0 md:w-1/2">
-              <h3 className="text-3xl md:text-5xl  md:mb-5 font-normal">
+              <h3 className="text-3xl  lg:text-5xl  md:mb-5 font-normal">
                 Join us for {currentEvent ? currentEvent.title : "Refresh"}      </h3>
 
-              <div className="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2 space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
                 <div className="flex space-x-2 items-center ">
                   <Calendar className=" animateable w-6 h-6 text-black" />
                   <p> {formattedTime} {formattedDate}</p>
@@ -109,7 +109,7 @@ export const Events = ({ events }: EventProps) => {
 
 
 
-              <p className="font-light text-xl md:text-2xl">
+              <p className="font-light text-xl lg:text-2xl">
                 {currentEvent.body}
               </p>
 
