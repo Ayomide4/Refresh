@@ -59,8 +59,7 @@ const Footer = ({ backgroundColor, textColor }: FooterProps) => {
         </p>
 
         <p className={`hidden md:block text-lg ${textColor ?? "text-background"}`}>
-          Designed by <a className="underline">Lone Star Web Studio</a>
-        </p>
+          Designed by <a className="underline cursor-pointer">Lone Star Web Studio</a>        </p>
 
         <button className={`flex items-center md:text-lg space-x-2 cursor-pointer ${textColor ?? "text-background"}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <p>Back to top</p>
