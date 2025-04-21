@@ -12,7 +12,7 @@ export default function Home() {
 
   // console.log(events)
   return (
-    <div className="flex flex-col min-h-screen w-full bg-background overflow-hidden" id="app">
+    <div className="flex flex-col min-h-screen w-full bg-[#222] overflow-hidden" id="app">
       <header className="relative w-full">
         <Hero />
       </header>
@@ -23,7 +23,9 @@ export default function Home() {
         <Donation />
       </main>
 
-      <Footer />
+
+      <Footer backgroundColor="bg-[#E9E7EC]" textColor="text-black" />
+
     </div>
 
   );

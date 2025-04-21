@@ -29,26 +29,26 @@ export default function Navbar() {
 
       {/* Desktop menu */}
       <div className="hidden lg:flex space-x-6 text-white">
-        <button onClick={() => handleNavClick("hero")} className="group relative">
+        <Link href="/" className="group relative">
           <span className="font-medium text-xl">Home</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
-        </button>
-        <button onClick={() => handleNavClick("about")} className="group relative">
+        </Link>
+        <Link href="/#about" className="group relative">
           <span className="font-medium text-xl">About</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
-        </button>
-        <button onClick={() => handleNavClick("events")} className="group relative">
+        </Link>
+        <Link href="/#events" className="group relative">
           <span className="font-medium text-xl">Events</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
-        </button>
+        </Link>
         <Link href="/gallery" className="group relative">
           <span className="font-medium text-xl">Gallery</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
         </Link>
-        <button onClick={() => handleNavClick("donation")} className="group relative">
+        <Link href="/#donation" onClick={() => handleNavClick("donation")} className="group relative">
           <span className="font-medium text-xl">Donate</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
-        </button>
+        </Link>
       </div>
 
       {/* Mobile hamburger */}
@@ -73,10 +73,14 @@ export default function Navbar() {
 
           <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
 
-          <button onClick={() => handleNavClick("about")}>About</button>
-          <button onClick={() => handleNavClick("events")}>Events</button>
+
+          <Link href="/#about" onClick={() => setIsOpen(false)}>About</Link>
+
+          <Link href="/#events" onClick={() => setIsOpen(false)}>Events</Link>
+
           <Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link>
-          <button onClick={() => handleNavClick("donation")}>Donate</button>
+
+          <Link href="/#donation" onClick={() => setIsOpen(false)}>Donation</Link>
         </div>
       )}
     </nav>

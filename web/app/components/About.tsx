@@ -57,14 +57,14 @@ const About = () => {
       gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 90%", // when the top of hero content hits 80% of viewport
+          start: "top 70%", // when the top of hero content hits 80% of viewport
           toggleActions: "play none none none",
         },
       })
 
         .fromTo(headings,
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.75, stagger: 0, ease: "power2.out" })
+          { y: 0, opacity: 1, duration: 0.45, stagger: 0, ease: "power2.out" })
         // Then animate the rest of the content (p and button) to fade in
         .fromTo(
           otherContent,
@@ -72,9 +72,8 @@ const About = () => {
           {
             y: 0,
             opacity: 1,
-            duration: 0.3,
+            duration: 0.8,
             ease: "power3.out",
-            stagger: 0.1,
           },
         );
     }
@@ -120,8 +119,7 @@ const About = () => {
     <section
       id="about"
       className="
-       sticky 
-      top-[0vh]
+      relative
         bg-white
         rounded-3xl
         -mt-16        

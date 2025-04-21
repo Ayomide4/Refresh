@@ -38,28 +38,26 @@ export const Events = ({ events }: EventProps) => {
       const q = gsap.utils.selector(headerRef)
 
       const headings = q("h2")
-      const otherContent = q("h3, h4, p, a")
+      const otherContent = q("h3, h4, p, a, .animateable")
 
       gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 90%",
+          start: "top 70%",
           toggleActions: "play none none none"
         },
       })
         .fromTo(headings,
           { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.75, stagger: 0 })
-        // Then animate the rest of the content (p and button) to fade in
+          { y: 0, opacity: 1, duration: 0.45, stagger: 0 })
         .fromTo(
           otherContent,
           { y: 30, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 0.3,
+            duration: 0.8,
             ease: "power3.out",
-            stagger: 0.05,
           },);
     }
 
@@ -95,11 +93,11 @@ export const Events = ({ events }: EventProps) => {
 
               <div className="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
                 <div className="flex space-x-2 items-center ">
-                  <Calendar className="w-6 h-6 text-black" />
+                  <Calendar className=" animateable w-6 h-6 text-black" />
                   <p> {formattedTime} {formattedDate}</p>
                 </div>
                 <div className="flex space-x-2 items-center ">
-                  <MapPin className="w-6 h-6 text-black" href="https://www.google.com/maps?q=2625 Texas Drive, Irving Tx 75062" />
+                  <MapPin className="animateable w-6 h-6 text-black" href="https://www.google.com/maps?q=2625 Texas Drive, Irving Tx 75062" />
                   <Link className="underline" href="https://www.google.com/maps?q=2625 Texas Drive, Irving Tx 75062" target="_blank" rel="noopener noreferrer">
                     2625 Texas Drive, Irving Tx 75062
                   </Link>

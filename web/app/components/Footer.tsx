@@ -19,7 +19,7 @@ const Footer = ({ backgroundColor, textColor }: FooterProps) => {
 
       <div className={`flex flex-col md:flex-row w-full md:space-x-96 ${textColor ?? "text-background"}`}>
         <div className="flex flex-col space-y-4 mb-12">
-          <p className="text-xl text-[#787878]">Contact us</p>
+          <p className="text-xl text-[#787878]">Get in touch</p>
           <a className={`text-2xl underline ${textColor ?? "text-background"}`} href="mailto:">
             info.therefresh@gmail.com
           </a>

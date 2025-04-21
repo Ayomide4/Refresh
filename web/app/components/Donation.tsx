@@ -51,7 +51,7 @@ const Donation = () => {
   return (
     <section
       id="donation"
-      className="py-20 px-6 md:px-12 lg:px-20 bg-[#222222] rounded-t-3xl relative -mt-10 z-40"
+      className="py-20 px-6 md:px-12 lg:px-20 bg-[#222222] rounded-3xl relative -mt-10 z-40"
       ref={divContentRef}
     >
       <div className="md:mx-20 text-left flex flex-col items-center" ref={titleRef}>
