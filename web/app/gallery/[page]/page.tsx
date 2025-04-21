@@ -2,7 +2,6 @@ import { urlFor, sanity } from "@/app/lib/sanity";
 import { galleryQuery } from "@/app/lib/queries";
 import { Lightbox, LightboxImage } from "@/app/components/Lightbox";
 import Link from "next/link";
-import Footer from "@/app/components/Footer";
 
 interface SanityGalleryImage {
   _id: string

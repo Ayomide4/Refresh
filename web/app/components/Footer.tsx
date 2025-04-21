@@ -1,6 +1,5 @@
 "use client"
 import { ArrowUpRight, SquareArrowUp } from "lucide-react";
-import { scrollToSection } from "../utils/helper"
 import Link from "next/link";
 
 interface FooterProps {
