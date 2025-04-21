@@ -133,10 +133,10 @@ const About = () => {
     >
       <div className="w-full px-6 md:px-20 pt-16 " ref={aboutContentRef}>
         <div className="flex flex-col md:flex-row w-full mb-20" ref={headerRef}>
-          <h2 className="text-5xl md:text-9xl font-light md:font-extralight mb-8 text-left md:w-1/2 opacity-0">
+          <h2 className="text-5xl md:text-8xl lg:text-9xl font-light md:font-extralight mb-8 text-left md:w-1/2 opacity-0">
             About Us
           </h2>
-          <div className="md:w-1/2 text-xl  space-y-5" >
+          <div className="md:w-1/2 text-xl space-y-5" >
             <p>
               REFRESH is an interdenominational gathering of believers from different races and cultures. Our core areas of operation are: Spirit-filled intense worship,intercession,  and revelation-based teachings.             </p>
             <p>
@@ -153,11 +153,11 @@ const About = () => {
             flex
             flex-nowrap
             gap-6
-            md:gap-44
-            py-4
-            my-6
+          md:gap-10
+            lg:gap-44
+            my-10
             md:mb-20
-            pl-6
+            px-6
           md:pl-20
             -mx-10
           md:-mx-20
