@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollToSection } from "../utils/helper";
+import { ChevronDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,48 +53,44 @@ export default function Hero() {
     <div
       id="hero"
       className="
-        relative
-        flex flex-col-reverse md:flex-row
-        md:justify-center
-        bg-[#222]
-        overflow-hidden
-      md:h-screen
-      "
+    relative
+    flex flex-col-reverse md:flex-row
+    md:justify-center
+    bg-[#222]
+    overflow-hidden
+    md:h-screen
+  "
     >
-      {/* Text */}
-      <div
-        ref={heroContentRef}
-        className="
-          flex flex-col md:self-center w-full h-full md:pt-40 mb-32 md:mb-0 md:w-1/2 px-5 md:px-14  text-white text-center md:text-left z-20"
-      >
+      <div className="absolute  flex flex-col justify-end lg:items-center text-white z-10 lg:text-center px-4 mb-32">
+        {/* <h1 className="text-6xl sm:text-6xl lg:text-[18rem] font-bold mt-32 lg:mt-24"> */}
+        {/*   REFRESH */}
+        {/* </h1> */}
 
-        <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold">
+        <h2 className="text-5xl sm:text-4xl lg:text-6xl mt-6 lg:-mt-16 mb-6 font-semibold text-white/90">
           An Encounter with the Father
-        </h1>
-        <p className="text-lg md:text-2xl font-light max-w-lg  mt-5">
-          Welcome to the official website of REFRESH. This is your hub for all news
-          and updates for every edition. Stay tuned.
-        </p>
-        <button
-          onClick={() => scrollToSection("events")}
-          className="
-          cursor-pointer
-          self-center
-          md:self-start mt-10
-            w-48 h-14
-            bg-primary hover:bg-primary/60
-            text-white font-normal text-xl
-            rounded-full shadow-lg
-            transition-all transform hover:scale-105
-          "
-        >
-          Our Events
-        </button>
+        </h2>
 
+        <p className="text-2xl sm:text-2xl max-w-xl lg:text-2xl mb-5  text-white/80">
+          Welcome to the official website of REFRESH. This is your hub for all news and updates for every edition. Stay tuned.
+        </p>
+
+        <div onClick={() => scrollToSection("about")}>
+          <button
+            className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 mt-5 rounded-full shadow-lg transition-all transform hover:scale-105"
+          >
+            Our Events
+          </button>
+        </div>
+
+        {/* {/* Chevron at bottom for mobile */}
+        {/* <div className="flex flex-col items-center mt-auto mb-8 lg:mb-28 cursor-pointer" onClick={() => scrollToSection("about")}> */}
+        {/*   <p className="text-xl">See our events</p> */}
+        {/*   <ChevronDown width={40} height={40} /> */}
+        {/* </div> */}
       </div>
 
       {/* Video */}
-      <div className="w-full md:w-1/2 h-64  relative mt-40 mb-10  md:m-0 md:h-full">
+      <div className="w-full h-screen relative md:m-0">
         <video
           autoPlay
           preload="auto"
@@ -105,10 +102,7 @@ export default function Hero() {
           <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* overlay: now truly “invisible” to pointer events */}
-
-        <div className="absolute inset-0 pointer-events-none md:bg-black/50"></div>
+        <div className="absolute inset-0 pointer-events-none bg-black/60"></div>
       </div>
-    </div >
-  );
+    </div>);
 }
