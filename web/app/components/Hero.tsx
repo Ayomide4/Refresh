@@ -15,18 +15,22 @@ export default function Hero() {
     // Animate text
     if (heroContentRef.current) {
       const q = gsap.utils.selector(heroContentRef);
-      const headings = q("h1");
+      const headings = q("h2");
       const otherContent = q("p, button");
       const tl = gsap.timeline();
       tl.fromTo(
         headings,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.75, ease: "power2.out", stagger: 0.3 }
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.3 }
       ).fromTo(
         otherContent,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, ease: "none", stagger: 0.1 },
-        "-=0.4"
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.2,
+          ease: "power1.inOut",
+        },
       );
     }
 
@@ -54,29 +58,28 @@ export default function Hero() {
       id="hero"
       className="
     relative
-    flex flex-col-reverse md:flex-row
-    md:justify-center
+    flex flex-col-reverse 
     bg-[#222]
     overflow-hidden
     md:h-screen
   "
     >
-      <div className="absolute  flex flex-col justify-end lg:items-center text-white z-10 lg:text-center px-4 mb-32">
+      <div className="absolute flex flex-col justify-end  text-white z-10  px-4 lg:ml-40 mb-32 lg:mb-44" ref={heroContentRef}>
         {/* <h1 className="text-6xl sm:text-6xl lg:text-[18rem] font-bold mt-32 lg:mt-24"> */}
         {/*   REFRESH */}
         {/* </h1> */}
 
-        <h2 className="text-5xl sm:text-4xl lg:text-6xl mt-6 lg:-mt-16 mb-6 font-semibold text-white/90">
+        <h2 className=" text-5xl md:text-6xl  lg:text-7xl lg:max-w-xl mt-6  mb-5 font-semibold lg:font-normal text-white/90 lg:leading-20">
           An Encounter with the Father
         </h2>
 
-        <p className="text-2xl sm:text-2xl max-w-xl lg:text-2xl mb-5  text-white/80">
+        <p className="text-2xl md:text-3xl max-w-xl  mb-8 md:mb-8   text-white/80">
           Welcome to the official website of REFRESH. This is your hub for all news and updates for every edition. Stay tuned.
         </p>
 
-        <div onClick={() => scrollToSection("about")}>
+        <div onClick={() => scrollToSection("events")}>
           <button
-            className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-48 h-14 mt-5 rounded-full shadow-lg transition-all transform hover:scale-105"
+            className="cursor-pointer bg-primary hover:bg-primary/90 text-white font-normal text-xl w-44 md:w-48 h-14 rounded-full shadow-lg transition-all transform hover:scale-105"
           >
             Our Events
           </button>
@@ -90,7 +93,7 @@ export default function Hero() {
       </div>
 
       {/* Video */}
-      <div className="w-full h-screen relative md:m-0">
+      <div className="w-full h-screen relative ">
         <video
           autoPlay
           preload="auto"
