@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollToSection } from "../utils/helper";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
@@ -94,14 +95,16 @@ export default function Hero() {
       {/* Video */}
       <div className="w-full h-screen relative ">
         <video
+          ref={videoRef}
           autoPlay
           preload="auto"
           playsInline
           muted
           loop
+          poster="/banner.jpg"
           className="w-full h-full object-cover z-10"
         >
-          <source src="/Refresh_Montage.mp4" type="video/mp4" />
+          <source src="https://ojcmztc7nnmvmxvt.public.blob.vercel-storage.com/video-IW4Lte8V7DGmGMmx6PTh2O1SZ6yBKI.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 pointer-events-none bg-black/60"></div>
