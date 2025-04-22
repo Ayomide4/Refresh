@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://myrefresh.org
+
+# Sitemaps
+Sitemap: https://myrefresh.org/sitemap.xml
