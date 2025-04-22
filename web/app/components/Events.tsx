@@ -81,7 +81,7 @@ export const Events = ({ events }: EventProps) => {
           <div className="flex flex-col md:flex-row md:space-x-10">
             {/* <div className="w-full h-72 bg-black rounded-2xl md:w-[1000px] md:h-[400px]"></div> */}
             <Image
-              className="object-cover w-full h-72 rounded-2xl md:w-1/2 md:min-h-[400px]"
+              className="object-cover w-full h-72 rounded-2xl md:w-1/2 md:min-h-[600px]"
               src={url}
               width={800} height={600}
               alt="The poster for the latest REFRESH event"
