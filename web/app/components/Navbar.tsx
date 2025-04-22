@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="absolute z-30 top-0 left-0 right-0 flex items-center justify-between px-6 py-4 md:px-14">
+    <nav className="absolute z-30 top-0 left-0 right-0 flex items-center justify-between px-6 py-4 md:px-6 lg:px-10">
       {/* Logo */}
       <Link href="/">
         <Image src={logo} width={120} height={60} alt="MyRefresh Logo" className="h-auto w-[120px]" />
@@ -37,16 +37,16 @@ export default function Navbar() {
           <span className="font-medium text-xl">About</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
         </Link>
-        <Link href="/#events" className="group relative">
-          <span className="font-medium text-xl">Events</span>
-          <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
-        </Link>
         <Link href="/gallery" className="group relative">
           <span className="font-medium text-xl">Gallery</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
         </Link>
         <Link href="/#donation" onClick={() => handleNavClick("donation")} className="group relative">
           <span className="font-medium text-xl">Donate</span>
+          <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
+        </Link>
+        <Link href="/#footer" onClick={() => handleNavClick("footer")} className="group relative">
+          <span className="font-medium text-xl">Contact</span>
           <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white group-hover:w-full transition-all" />
         </Link>
       </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile overlay menu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center space-y-8 text-4xl text-black z-50">
+        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center space-y-8 text-4xl text-black z-50" >
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-6 right-6 text-5xl"
@@ -81,6 +81,8 @@ export default function Navbar() {
           <Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link>
 
           <Link href="/#donation" onClick={() => setIsOpen(false)}>Donation</Link>
+
+          <Link href="/#footer" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
       )}
     </nav>
