@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollToSection } from "../utils/helper";
-import { ChevronDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,7 +101,7 @@ export default function Hero() {
           loop
           className="w-full h-full object-cover z-10"
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="/Refresh_Montage.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 pointer-events-none bg-black/60"></div>
