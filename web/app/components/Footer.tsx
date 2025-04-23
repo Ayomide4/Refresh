@@ -3,7 +3,6 @@ import { ArrowUpRight, Instagram, FacebookIcon, SquareArrowUp, Youtube } from "l
 import Link from "next/link";
 import { SiteSettings } from "../page";
 
-
 interface FooterProps {
   backgroundColor?: string;
   textColor?: string;
