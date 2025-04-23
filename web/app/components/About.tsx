@@ -5,6 +5,7 @@ import ImageCarousel from "./ImageCarousel";
 import gsap from "gsap";
 import Link from "next/link";
 import { useLightObserver } from "../lib/useLightObserver";
+import { SiteSettings } from "../page";
 
 const imageFilenames = [
   "IMG_0011.jpg",
@@ -29,9 +30,13 @@ const imageFilenames = [
   "IMG_9983.jpg",
 ];
 
+interface AboutProps {
+  siteSettings: SiteSettings
+}
 
 
-const About = () => {
+
+const About = ({ siteSettings }: AboutProps) => {
   // State to hold the dynamically loaded image URLs.
   const statementRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -90,19 +95,18 @@ const About = () => {
     {
       icon: <HeartHandshake size={40} />,
       title: "Our Mission",
-      content: "To create a spiritually refreshing atmosphere where attendees encounter the Father, receive vital empowerment through revelation-based teaching, intense worship, and intercession, and cultivate a lasting passion and hunger for God.",
-
+      content: siteSettings.missionStatement
+        ? siteSettings.missionStatement
+        : "To create a spiritually refreshing atmosphere where attendees encounter the Father, receive vital empowerment through revelation-based teaching, intense worship, and intercession, and cultivate a lasting passion and hunger for God.",
     },
-
     {
       icon: <Eye size={40} />,
       title: "Our Vision",
-      content:
-
-        "To serve as one of the major hubs for global revival. To take REFRESH across territories - cities, nations, and continents.",
+      content: siteSettings.visionStatement
+        ? siteSettings.visionStatement
+        : "To serve as one of the major hubs for global revival. To take REFRESH across territories - cities, nations, and continents.",
     },
   ];
-
   const renderStatements = statements.map((statement, idx) => (
     <article
       key={idx}
@@ -141,9 +145,9 @@ const About = () => {
           </h2>
           <div className="md:w-1/2 text-xl space-y-5" >
             <p>
-              REFRESH is an interdenominational gathering of believers from different races and cultures. Our core areas of operation are: Spirit-filled intense worship,intercession,  and revelation-based teachings.             </p>
+              {siteSettings.aboutParagraph1 ? siteSettings.aboutParagraph1 : "REFRESH is an interdenominational gathering of believers from different races and cultures. Our core areas of operation are: Spirit-filled intense worship,intercession,  and revelation-based teachings."}</p>
             <p>
-              At REFRESH, we believe in creating the atmosphere that facilitates encounters with the Father. We believe in the move of the Spirit through which healing, deliverance, and spiritual empowerments are made possible. REFRESH is not an event; it is a movement.
+              {siteSettings.aboutParagraph2 ? siteSettings.aboutParagraph2 : "At REFRESH, we believe in creating the atmosphere that facilitates encounters with the Father. We believe in the move of the Spirit through which healing, deliverance, and spiritual empowerments are made possible. REFRESH is not an event; it is a movement."}
             </p>
           </div>
         </div>

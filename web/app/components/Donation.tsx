@@ -7,8 +7,15 @@ import Image from "next/image";
 import cashApp from "@/public/cash-app.svg";
 import zelle from "@/public/zelle.svg";
 import paypal from "@/public/paypal.svg";
+import { SiteSettings } from "../page";
 
-const Donation = () => {
+interface DonationProps {
+  siteSettings: SiteSettings
+}
+
+
+
+const Donation = ({ siteSettings }: DonationProps) => {
   const [copied, setCopied] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
   const divContentRef = useRef<HTMLDivElement>(null);
@@ -62,46 +69,39 @@ const Donation = () => {
 
         {/* Description */}
         <p className="text-xl text-center mb-8 max-w-2xl text-white">
-          Your generous donation helps us create more opportunities for
-          spiritual growth and community building. Every contribution makes a
-          difference in our ability to serve and expand our reach.
+          {siteSettings.donationDescription
+            ? siteSettings.donationDescription
+            : "Your generous donation helps us create more opportunities for spiritual growth and community building. Every contribution makes a difference in our ability to serve and expand our reach."}
         </p>
 
-        {/* Donation Form */}
-        {/* <DonationForm /> */}
 
-        {/* Alternative Donation Methods */}
         <div className="space-y-4 mt-10">
-          {/* <h3 className="text-white text-2xl font-semibold text-center"> */}
-          {/*   Other ways to Donate */}
-          {/* </h3> */}
 
-          {/* Icons with Placeholder Links */}
-          <div className="flex flex-col md:flex-row w-full justify-evenly md:gap-6 ">
+          <div className="flex flex-col md:flex-row w-full justify-center gap-6 md:gap-12 lg:gap-20 xl:gap-24">
             {/* CashApp */}
             <Link
-              href="https://cash.app/$refreshdfw"
+              href={siteSettings.cashAppLink || "https://cash.app/$refreshdfw"}
               target="_blank"
-              className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4"
+              className="flex flex-col items-center text-center hover:opacity-70 transition-opacity w-44 h-auto p-4"
             >
               <Image
                 src={cashApp}
                 alt="CashApp Logo"
                 width={80}
                 height={80}
-                className="w-40 mb-2"
+                className="w-20 mb-2"
               />
-              <p className="font-bold text-white">$Refreshdfw</p>
+              <p className="font-bold text-white text-base">$Refreshdfw</p>
             </Link>
 
             {/* Zelle */}
-            <div className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4">
+            <div className="flex flex-col items-center text-center hover:opacity-70 transition-opacity w-44 h-auto p-4">
               <Image
                 src={zelle}
                 alt="Zelle Logo"
                 width={80}
                 height={80}
-                className="w-40 mb-2"
+                className="w-20 mb-2"
               />
               <p className="font-bold text-white text-sm">
                 Send via Zelle:{" "}
@@ -109,7 +109,7 @@ const Donation = () => {
                   onClick={handleCopy}
                   className="underline cursor-pointer hover:text-gray-300 transition"
                 >
-                  682-583-1240
+                  {siteSettings.zellePhoneNumber || "682-583-1240"}
                 </span>
               </p>
               {copied && (
@@ -119,23 +119,28 @@ const Donation = () => {
 
             {/* PayPal */}
             <Link
-              href="https://paypal.me/refreshdfw"
+              href={siteSettings.paypalLink || "https://paypal.me/refreshdfw"}
               target="_blank"
-              className="flex flex-col md:justify-between items-center text-center hover:opacity-70 transition-opacity  w-44 md:h-60 p-4 -mt-4"
+              className="flex flex-col items-center text-center hover:opacity-70 transition-opacity w-44 h-auto p-4"
             >
               <Image
                 src={paypal}
                 alt="Paypal Logo"
                 width={80}
                 height={80}
-                className="w-40 mb-8"
+                className="w-20 mb-2"
               />
-              <p className="font-bold text-white">PayPal.me/refreshdfw</p>
+              <p className="font-bold text-white text-base">
+                {siteSettings.paypalLink
+                  ? new URL(siteSettings.paypalLink).pathname.replace("/", "")
+                  : "PayPal.me/refreshdfw"}
+              </p>
             </Link>
           </div>
+
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

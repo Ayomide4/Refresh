@@ -5,9 +5,34 @@ import Donation from "./components/Donation";
 import { fetchEvents } from "./lib/fetchEvents";
 import { Event } from "./types";
 import Footer from "./components/Footer";
+import { sanity } from "./lib/sanity";
+import { siteSettingsQuery } from "./lib/queries";
 
+export interface SiteSettings {
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+  missionStatement: string;
+  visionStatement: string;
 
+  donationDescription: string;
+  cashAppLink: string;
+  zellePhoneNumber: string;
+  paypalLink: string;
+
+  contactEmail: string;
+  phoneNumber: string;
+
+  instagramUrl: string;
+  facebookUrl: string;
+  youtubeUrl: string;
+
+  designedByText: string;
+  designedByLink: string;
+
+  copyrightText: string;
+}
 const events: Event[] = await fetchEvents()
+const siteSettings: SiteSettings = await sanity.fetch(siteSettingsQuery);
 
 
 export default function Home() {
@@ -18,13 +43,13 @@ export default function Home() {
         <Hero />
       </header>
       <main className="flex-grow">
-        <About />
+        <About siteSettings={siteSettings} />
         <Events events={events} />
-        <Donation />
+        <Donation siteSettings={siteSettings} />
       </main>
 
 
-      <Footer backgroundColor="bg-[#E9E7EC]" textColor="text-black" />
+      <Footer backgroundColor="bg-[#E9E7EC]" textColor="text-black" siteSettings={siteSettings} />
 
     </div>
 
