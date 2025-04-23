@@ -1,5 +1,5 @@
 "use client"
-import { ArrowUpRight, SquareArrowUp } from "lucide-react";
+import { ArrowUpRight, Instagram, FacebookIcon, SquareArrowUp, Youtube } from "lucide-react";
 import Link from "next/link";
 
 interface FooterProps {
@@ -31,14 +31,17 @@ const Footer = ({ backgroundColor, textColor }: FooterProps) => {
         <div className="flex flex-col space-y-4 mb-8">
           <p className="text-xl text-[#787878]">Follow us</p>
           <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.instagram.com/therefreshgathering?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <Instagram size={24} />
             <p className="text-2xl">instagram</p>
             <ArrowUpRight size={24} />
           </Link>
           <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.facebook.com/people/The-Refresh-Gathering/100091409076993/" target="_blank" rel="noopener noreferrer">
+            <FacebookIcon size={24} />
             <p className="text-2xl">facebook</p>
             <ArrowUpRight size={24} />
           </Link>
           <Link className={`flex items-center space-x-2 ${textColor ?? "text-background"}`} href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer">
+            <Youtube size={24} />
             <p className="text-2xl">youtube</p>
             <ArrowUpRight size={24} />
           </Link>

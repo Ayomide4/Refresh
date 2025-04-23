@@ -8,7 +8,7 @@ import Link from "next/link";
 import { urlFor } from "../lib/sanityImage"
 import { Event } from "../types";
 import { format } from 'date-fns';
-
+import { useLightObserver } from "../lib/useLightObserver"
 
 interface EventProps {
   events: Event[]
@@ -17,6 +17,9 @@ interface EventProps {
 export const Events = ({ events }: EventProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null)
+  const eventsRef = useRef<HTMLElement | null>(null)
+  useLightObserver(eventsRef)
+
 
   const currentEvent = events[0]
   const formattedDate = format(new Date(currentEvent.date), 'MM/dd/yy'); // "04/16/25"
@@ -28,6 +31,7 @@ export const Events = ({ events }: EventProps) => {
 
     return <EventCard event={event} imageUrl={imageUrl} key={index} />
   })
+
 
   useEffect(() => {
     if (containerRef.current) {
@@ -65,8 +69,9 @@ export const Events = ({ events }: EventProps) => {
 
   return (
     <section
+      ref={eventsRef}
       id="events"
-      className="py-16 px-6  bg-[#E9E7EC] rounded-3xl z-30 -mt-10 relative"
+      className="py-16 px-6  bg-[#E9E7EC] rounded-3xl z-20 -mt-10 relative"
     >
 
       <div className=" md:mx-20" ref={headerRef}>
@@ -123,13 +128,6 @@ export const Events = ({ events }: EventProps) => {
           </div>
 
           : <></>}
-        {/* <div className="bg-black rounded-full text-white flex justify-evenly p-4 text-sm items-center mt-8 md:hidden"> */}
-        {/*   <MapPin className="cursor-pointer" href="/" /> */}
-        {/*   <Link href="/" className="underline"> */}
-        {/*     info@therefresh.com */}
-        {/*   </Link> */}
-        {/*   <p className="underline cursor-pointer">999-999-9999</p> */}
-        {/* </div> */}
 
         <hr className=" border-black/15 my-12" />
 

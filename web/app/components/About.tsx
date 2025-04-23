@@ -4,6 +4,7 @@ import { Eye, HeartHandshake } from "lucide-react";
 import ImageCarousel from "./ImageCarousel";
 import gsap from "gsap";
 import Link from "next/link";
+import { useLightObserver } from "../lib/useLightObserver";
 
 const imageFilenames = [
   "IMG_0011.jpg",
@@ -35,6 +36,9 @@ const About = () => {
   const statementRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const aboutContentRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLElement | null>(null)
+
+  useLightObserver(aboutRef);
 
 
   // These are plain string URLs (public assets)
@@ -117,6 +121,7 @@ const About = () => {
 
   return (
     <section
+      ref={aboutRef}
       id="about"
       className="
       relative

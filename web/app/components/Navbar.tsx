@@ -5,9 +5,11 @@ import Link from "next/link";
 import logo from "@/public/logo1.png";
 import { Menu } from "lucide-react"
 import { scrollToSection } from "../utils/helper";
+import { useLightSection } from "./LightSectionContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isOverLight } = useLightSection()
 
   // Prevent background scrolling when menu is open
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden text-white"
+        className={`lg:hidden ${isOverLight ? "text-black" : "text-white"} fixed top-6 right-6 z-50`}
         aria-label="Toggle menu"
       >
         <Menu width={32} height={32} />
