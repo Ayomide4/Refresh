@@ -6,7 +6,7 @@ interface EventCardProps {
   event: Event;
   imageUrl: string;
 }
-export const EventCard = ({ event, imageUrl }: EventCardProps) => {
+export const EventCard = ({ imageUrl }: EventCardProps) => {
   return (
     <Link href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer" > < article className="relative min-w-80 rounded-2xl overflow-hidden cursor-pointer" >
       <Image
