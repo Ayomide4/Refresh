@@ -131,10 +131,7 @@ const Donation = ({ siteSettings }: DonationProps) => {
                 className="w-20 mb-2"
               />
               <p className="font-bold text-white text-base">
-                {siteSettings.paypalLink
-                  ? new URL(siteSettings.paypalLink).pathname.replace("/", "")
-                  : "PayPal.me/refreshdfw"}
-              </p>
+                @Refreshdfw              </p>
             </Link>
           </div>
 

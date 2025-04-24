@@ -8,7 +8,7 @@ interface EventCardProps {
 }
 export const EventCard = ({ event, imageUrl }: EventCardProps) => {
   return (
-    <article className="relative min-w-80 rounded-2xl overflow-hidden cursor-pointer">
+    <Link href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer" > < article className="relative min-w-80 rounded-2xl overflow-hidden cursor-pointer" >
       <Image
         src={imageUrl}
         alt="Event"
@@ -17,10 +17,11 @@ export const EventCard = ({ event, imageUrl }: EventCardProps) => {
         className="object-cover rounded-2xl"
       />
 
-      <Link href="https://www.youtube.com/@therefreshgathering/videos" target="_blank" rel="noopener noreferrer" className="absolute top-5 right-5 bg-black rounded-full text-sm text-white px-4 py-2 cursor-pointer">
+      <div className="absolute top-5 right-5 bg-black rounded-full text-sm text-white px-4 py-2 cursor-pointer">
         Watch video
-      </Link>
-    </article>
+      </div>
+    </article >
+    </Link >
   );
 };
 
