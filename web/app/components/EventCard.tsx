@@ -8,7 +8,7 @@ interface EventCardProps {
 }
 export const EventCard = ({ event, imageUrl }: EventCardProps) => {
   return (
-    <article className="relative min-w-80 h-80 rounded-2xl overflow-hidden cursor-pointer">
+    <article className="relative min-w-80 rounded-2xl overflow-hidden cursor-pointer">
       <Image
         src={imageUrl}
         alt="Event"
