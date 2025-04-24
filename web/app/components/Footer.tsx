@@ -117,8 +117,8 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
 
 
         <div className="flex items-center space-x-4 w-full lg:w-fit">
-          <p className={`text-lg ${textColor ?? "text-background"}`}>Presented by</p>
-          <Image src={kingdomLife} width="200" height="100" alt="image for Kingdom Life Network" sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 320px" className="h-auto w-[150px]" />
+          <p className={`text-lg ${textColor ?? "text-background"}`}>Powered by</p>
+          <Image src={kingdomLife} width="200" height="100" alt="image for Kingdom Life Network" sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 320px" className="h-auto w-[120px]" />
         </div>
 
         <p className={`hidden lg:block text-lg ${textColor ?? "text-background"} text-nowrap`}>

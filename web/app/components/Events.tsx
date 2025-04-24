@@ -85,12 +85,15 @@ export const Events = ({ events }: EventProps) => {
         {currentEvent ?
           <div className="flex flex-col md:flex-row md:space-x-10">
             {/* <div className="w-full h-72 bg-black rounded-2xl md:w-[1000px] md:h-[400px]"></div> */}
-            <Image
-              className="object-cover w-full h-72 rounded-2xl md:w-1/2 md:min-h-[600px]"
-              src={url}
-              width={800} height={600}
-              alt="The poster for the latest REFRESH event"
-            />
+            <div className="w-full md:w-1/2  overflow-hidden">
+              <Image
+                src={url}
+                alt="Event poster"
+                width={800}
+                height={600}
+                className="object-cover w-full rounded-2xl"
+              />
+            </div>
 
             <div className="space-y-3 mt-8 md:mt-0 md:w-1/2">
               <h3 className="text-3xl  lg:text-5xl  md:mb-5 font-normal">
