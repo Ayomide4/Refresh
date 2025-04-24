@@ -48,7 +48,7 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Instagram size={24} />
+            <Instagram size={24} color="#E1306C" />
             <p className="text-2xl">instagram</p>
             <ArrowUpRight size={24} />
           </Link>
@@ -59,7 +59,7 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookIcon size={24} />
+            <FacebookIcon size={24} color="blue" />
             <p className="text-2xl">facebook</p>
             <ArrowUpRight size={24} />
           </Link>
@@ -70,7 +70,7 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Youtube size={24} />
+            <Youtube size={24} color="red" />
             <p className="text-2xl">youtube</p>
             <ArrowUpRight size={24} />
           </Link>
