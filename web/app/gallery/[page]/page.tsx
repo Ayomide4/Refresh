@@ -42,7 +42,7 @@ async function GalleryPage({
   return (
     <div className="px-4 py-8 text-center">
       <h1 className="text-4xl md:text-5xl font-semibold mb-8 mt-24 text-white">
-        Gallery — Page {page}
+        Gallery
       </h1>
       <Lightbox images={galleryImages} />
       <nav className="flex justify-center items-center space-x-4 mt-8 text-white">
@@ -51,7 +51,6 @@ async function GalleryPage({
             ← Prev
           </Link>
         )}
-        <span>Page {page} of {totalPages}</span>
         {page < totalPages && (
           <Link href={`/gallery/${page + 1}`} className="underline hover:text-gray-700">
             Next →
