@@ -83,13 +83,13 @@ export const Events = ({ events }: EventProps) => {
 
 
         {currentEvent ?
-          <div className="flex flex-col md:flex-row md:space-x-10">
-            <div className="relative w-full md:w-1/2 max-w-4xl  aspect-square overflow-hidden rounded-2xl">
+          <div className="flex flex-col md:flex-row md:space-x-10 2xl:justify-evenly 2xl:pt-10">
+            <div className="relative w-full md:w-1/2 max-w-3xl  aspect-square overflow-hidden ">
               <Image
                 src={url}
                 alt="Event poster"
                 fill
-                className="object-cover "
+                className="object-contain"
               />
             </div>
 

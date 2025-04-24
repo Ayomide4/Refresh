@@ -1,10 +1,13 @@
 "use client"
-import { ArrowUpRight, Instagram, FacebookIcon, SquareArrowUp, Youtube } from "lucide-react";
+import { ArrowUpRight, SquareArrowUp } from "lucide-react";
 import Link from "next/link";
 import { SiteSettings } from "../page";
 import Image from "next/image"
 import kingdomLife from "@/public/kingdom.png"
 import logoBlack from "@/public/logoBlack.png"
+import youtube from "@/public/youtube.svg"
+import instagram from "@/public/instagram.svg"
+import facebook from "@/public/facebook.svg"
 
 interface FooterProps {
   backgroundColor?: string;
@@ -42,40 +45,45 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
 
         <div className="flex flex-col space-y-4 mb-8">
           <p className="text-xl text-[#787878]">Follow us</p>
+
+          {/* Instagram */}
           <Link
-            className={`flex  items-center space-x-2 ${textColor ?? "text-background"}  w-fit`}
+            className={`flex items-center space-x-2 ${textColor ?? "text-background"} w-fit`}
             href={siteSettings.instagramUrl || "https://www.instagram.com/therefreshgathering"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Instagram size={24} color="#E1306C" />
+            <Image src={instagram} width={24} height={24} alt="instagram icon" />
             <p className="text-2xl">instagram</p>
             <ArrowUpRight size={24} />
           </Link>
 
+          {/* Facebook */}
           <Link
-            className={`flex items-center space-x-2 ${textColor ?? "text-background"}  w-fit`}
+            className={`flex items-center space-x-2 ${textColor ?? "text-background"} w-fit`}
             href={siteSettings.facebookUrl || "https://www.facebook.com/people/The-Refresh-Gathering"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookIcon size={24} color="blue" />
+
+            <Image src={facebook} width={24} height={24} alt="facebook icon" />
+
             <p className="text-2xl">facebook</p>
             <ArrowUpRight size={24} />
           </Link>
 
+          {/* YouTube */}
           <Link
-            className={`flex items-center space-x-2 ${textColor ?? "text-background"}  w-fit`}
+            className={`flex items-center space-x-2 ${textColor ?? "text-background"} w-fit`}
             href={siteSettings.youtubeUrl || "https://www.youtube.com/@therefreshgathering/videos"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Youtube size={24} color="red" />
+            <Image src={youtube} width={24} height={24} alt="youtube icon" />
             <p className="text-2xl">youtube</p>
             <ArrowUpRight size={24} />
           </Link>
         </div>
-
         <Image
           src={logoBlack}
           alt="Refresh Logo"
@@ -118,7 +126,7 @@ const Footer = ({ backgroundColor, textColor, siteSettings }: FooterProps) => {
 
         <div className="flex items-center space-x-4 w-full lg:w-fit">
           <p className={`text-lg ${textColor ?? "text-background"}`}>Powered by</p>
-          <Image src={kingdomLife} width="200" height="100" alt="image for Kingdom Life Network" sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 320px" className="h-auto w-[120px]" />
+          <Image src={kingdomLife} width="200" height="100" alt="image for Kingdom Life Network" sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, 320px" className="h-auto w-[100px]" />
         </div>
 
         <p className={`hidden lg:block text-lg ${textColor ?? "text-background"} text-nowrap`}>
