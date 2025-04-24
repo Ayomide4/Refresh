@@ -84,21 +84,20 @@ export const Events = ({ events }: EventProps) => {
 
         {currentEvent ?
           <div className="flex flex-col md:flex-row md:space-x-10">
-            {/* <div className="w-full h-72 bg-black rounded-2xl md:w-[1000px] md:h-[400px]"></div> */}
-            <div className="relative w-full md:w-1/2 aspect-square overflow-hidden rounded-2xl">
+            <div className="relative w-full md:w-1/2 max-w-4xl  aspect-square overflow-hidden rounded-2xl">
               <Image
                 src={url}
                 alt="Event poster"
                 fill
-                className="object-cover"
+                className="object-cover "
               />
             </div>
 
             <div className="space-y-3 mt-8 md:mt-0 md:w-1/2">
-              <h3 className="text-3xl  lg:text-5xl  md:mb-5 font-normal">
+              <h3 className="text-3xl  lg:text-5xl 2xl:text-7xl md:mb-5 font-normal">
                 Join us for {currentEvent ? currentEvent.title : "Refresh"}      </h3>
 
-              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2 space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center 2xl:text-2xl gap-2 space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
                 <div className="flex space-x-2 items-center ">
                   <Calendar className=" animateable w-6 h-6 text-black" />
                   <p> {formattedTime} {formattedDate}</p>
@@ -116,7 +115,7 @@ export const Events = ({ events }: EventProps) => {
 
 
 
-              <p className="font-light text-xl lg:text-2xl">
+              <p className="font-light text-xl lg:text-2xl  2xl:text-4xl">
                 {currentEvent.body}
               </p>
 
