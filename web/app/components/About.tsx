@@ -119,7 +119,7 @@ const About = ({ siteSettings }: AboutProps) => {
     >
       <div>{statement.icon}</div>
       <h2 className="text-2xl md:text-4xl font-normal">{statement.title}</h2>
-      <p className="font-light md:text-xl">{statement.content}</p>
+      <p className="font-light text-lg md:text-xl">{statement.content}</p>
     </article>
   ));
 
@@ -155,20 +155,16 @@ const About = ({ siteSettings }: AboutProps) => {
         <div className="border-b-2 border-black/15 mt-12"></div>
 
         <div
-          className="
-            overflow-x-auto
-            flex
-            flex-nowrap
-            gap-6
-          md:gap-10
-            lg:gap-44
-            my-10
-            md:mb-20
-            px-6
-          md:pl-20
-            -mx-10
-          md:-mx-20
-          "
+          className="   flex
+    flex-col md:flex-row
+    items-center md:items-start
+    gap-6 md:gap-10 lg:gap-44
+    my-10
+    md:mb-20
+    px-6
+    md:pl-20
+    -mx-10
+    md:-mx-20 "
           ref={statementRef}
         >
           {renderStatements}
