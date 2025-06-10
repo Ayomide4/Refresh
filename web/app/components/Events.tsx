@@ -95,7 +95,7 @@ export const Events = ({ events }: EventProps) => {
 
             <div className="space-y-3 mt-8 md:mt-0 md:w-1/2">
               <h3 className="text-3xl  lg:text-5xl 2xl:text-7xl md:mb-5 font-normal">
-                Join us for {currentEvent ? currentEvent.title : "Refresh"}      </h3>
+                {currentEvent ? currentEvent.title : "Refresh"}      </h3>
 
               <div className="flex flex-col lg:flex-row items-start lg:items-center 2xl:text-2xl gap-2 space-y-3 md:space-y-0 md:space-x-8 text-lg mt-5 font-semibold">
                 <div className="flex space-x-2 items-center ">
