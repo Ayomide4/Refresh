@@ -104,7 +104,7 @@ export default function Hero() {
           poster="/banner.jpg"
           className="w-full h-full object-cover z-10"
         >
-          <source src="https://ojcmztc7nnmvmxvt.public.blob.vercel-storage.com/video-IW4Lte8V7DGmGMmx6PTh2O1SZ6yBKI.mp4" type="video/mp4" />
+          <source src="https://circleofintimacy.org/Refresh_Montage.mp4/Refresh_Montage.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 pointer-events-none bg-black/60"></div>
